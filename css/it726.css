@@ -1,0 +1,641 @@
+/*PC間距*/
+.PC #it726 .BLANK{ clear: both; width:100%; height:40px;}
+.PC #it726 .BLANK2{ width:100%; height:25px;}	
+.PC #it726 .BLANK3{ width:100%; height:15px;}	
+
+/*==============桌機版================桌機版==============桌機版=============================================*/
+/*PC表頭尾*/	
+.PC .PC_LOGIN{/*PC登入頭*/
+	width:100%;
+	text-align:center;
+	display:block;
+	height:38px;
+	background-image:url(../images/logomenu/bg.jpg);}
+
+.PC .FOOT_PC{ width:100%;height:auto;overflow:hidden; display:block;}
+/*PC表頭尾*/
+
+/*消失區*/
+.PC #float_icon, .PC #header, .PC .FOOT_MOBILE, .PC #it726 .NEW_BT_F, .PC #it726 .MENU_F , .PC #it726 .FORMO , .PC #it726 .MO_MENU_BG, .PC #it726 .FOR_MB{display:none;}
+/*消失區尾*/		
+/*框架區*/
+.PC #it726-wrapper{
+	widows: 100%;
+	overflow: hidden;
+	background-image: url(../images/it726/bg.jpg);
+	background-size: 7.5% auto;
+}
+.PC #it726{
+	width: 100%;
+	font-size: 15px;
+}
+.PC #it726 img{width: 100%; height: auto;}
+/*主標*/
+.PC #it726 .TOP{
+	width: 100%;
+	height: 455px;
+	display: block;
+	background-image: 
+		url(../images/it726/flora_left.png),
+		url(../images/it726/flora_right.png);
+	background-position: left top, right top;
+	background-repeat: no-repeat;
+	background-size: 25% auto;
+}
+.PC #it726 .TOP h1{
+	width: 100%;
+	min-width: 1240px;
+	height: 455px;
+	background-image: url(../images/it726/in_top.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 1180px 455px;
+	text-indent: -9999px;
+	position: relative;
+	z-index: 20;
+}
+/*雲動畫*/
+.PC #it726 .CLOUD{
+	position: relative;
+	width: 100%;
+	z-index: 10;
+	top: -455px;
+
+}
+.PC #it726 .CLOUD .ANI_L1{/*大雲*/
+	width: 16%;
+	height: auto;
+	position: absolute;
+	left: 5%;
+	top: 340px;
+	z-index: 18;
+	-webkit-animation: go_L1 3s ease-in-out infinite;
+}
+@-webkit-keyframes go_L1{
+	0%{left: 5%;}
+	40%{left: 3%;}
+	60%{left: 3%;}
+	100%{left: 5%;}
+}
+.PC #it726 .CLOUD .ANI_L2{/*小雲*/
+	width: 13%;
+	height: auto;
+	position: absolute;
+	left: -3%;
+	top: 300px;
+	z-index: 19;
+	-webkit-animation: go_L2 3s ease-in-out infinite;
+}
+@-webkit-keyframes go_L2{
+	0%{left: -3%;}
+	40%{left: 0%;}
+	60%{left: 0%;}
+	100%{left: -3%;}
+}
+.PC #it726 .CLOUD .ANI_R1{/*大雲*/
+	width: 16%;
+	height: auto;
+	position: absolute;
+	right: -4%;
+	top: 280px;
+	z-index: 18;
+	-webkit-animation: go_R1 3s ease-in-out infinite;
+}
+@-webkit-keyframes go_R1{
+	0%{right: -4%;}
+	40%{right: -2%;}
+	60%{right: -2%;}
+	100%{right: -4%;}
+}
+.PC #it726 .CLOUD .ANI_R2{/*小雲*/
+	width: 13%;
+	height: auto;
+	position: absolute;
+	right: 10%;
+	top: 330px;
+	z-index: 19;
+	-webkit-animation: go_R2 3s ease-in-out infinite;
+}
+@-webkit-keyframes go_R2{
+	0%{right: 10%;}
+	40%{right: 8%;}
+	60%{right: 8%;}
+	100%{right: 10%;}
+}
+/*NAV選單列*/
+.PC #it726 .NAV{
+	width: 100%;
+	min-width: 1240px;
+	position: relative;
+	z-index: 21;
+}
+.PC #it726 .NAV ul{
+	margin: 0 auto;
+	width: 1090px;
+	height: 93px;
+}
+.PC #it726 .NAV li{
+	float: left;
+	width: 25%;
+}
+.PC #it726 .NAV li.NOW{
+	display: block;
+	widows: 100%;
+	height: 93px;
+	background-color: #7c2f1e;
+	color: #fff;
+	font-size: 1.8em;
+	line-height: 93px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 85% auto;
+	background-image: url(../images/it726/label2.png);
+}
+.PC #it726 .NAV li a{
+	display: block;
+	widows: 100%;
+	height: 93px;
+	background-color: #ca164b;
+	color: #fff;
+	font-size: 1.8em;
+	line-height: 93px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 85% auto;
+	background-image: url(../images/it726/label1.png);
+}
+.PC #it726 .NAV li a:hover{
+	background-image: url(../images/it726/label2.png);
+}
+/*CONTENT內容*/
+.PC #it726 .CONTENT_W{
+	width: 100%;
+	min-width: 1240px;
+}
+.PC #it726 .CONTENT{
+	margin: 0 auto;
+	width: 1090px;
+	background-color: #ff6291;
+	padding-top: 40px;
+}
+.PC #it726 .CONTENT .CON_BG{
+	margin: 0 auto;
+	width: 960px;
+	overflow: hidden;
+	background-color: #ff86aa;
+}
+.PC #it726 .CONTENT .CON_T{
+	margin: 0 auto;
+	width: 880px;
+	height: 75px;
+	background-image: url(../images/it726/bar_bg.jpg);
+}
+.PC #it726 .CONTENT .CON_T:first-child{margin-top: 35px;}
+.PC #it726 .CONTENT .CON_T p{
+	display: block;
+	font-size: 2.4em;
+	line-height: 75px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: rgb(30, 185, 169) 0px 0px 10px;
+}
+.PC #it726 .CONTENT .CON_INTRO{
+	margin: 0 auto;
+	width: 880px;
+	padding: 14px 70px 45px 70px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.PC #it726 .CONTENT .CON_INTRO .PIC{
+	float: left;
+	width: 43%;
+	margin-top: 25px;
+} 
+.PC #it726 .CONTENT .CON_INTRO .TEXT{
+	float: right;
+	width: 53%;
+	padding-top: 25px;
+}
+.PC #it726 .CONTENT .CON_INTRO .TEXT p{
+	font-size: 1.3em;
+	line-height: 1.8em;
+	color: #231815;
+}
+.PC #it726 .CONTENT .CON_INTRO .TEXT span{
+	color: #ff6291;
+}
+.PC #it726 .CONTENT .CON_INTRO .TEXT p:nth-of-type(1){
+	color: #ea1b1b;
+	font-weight: bold;
+	font-size: 1.8em;
+	text-indent: -.5em;
+}
+.PC #it726 .CONTENT .CON_INTRO .CON_BT{
+	clear: both;
+	width: 195px;
+	height: 50px;
+	margin-top: 40px;
+	float: right;
+}
+.PC #it726 .CONTENT .CON_INTRO .CON_BT a{
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-size: 1.6em;;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+	background-color: #ffac0e;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.PC #it726 .CONTENT .CON_INTRO .CON_BT a:hover{
+	background-color: #ea1b1b;
+	transition: 1s;
+}
+.PC #it726 .CONTENT .CON_INTRO2{
+	margin: 0 auto;
+	width: 880px;
+	padding: 14px 70px 45px 70px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .PIC{
+	float: right;
+	width: 43%;
+	margin-top: 25px;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .TEXT{
+	float: left;
+	width: 54%;
+	padding-top: 25px;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .TEXT p{
+	font-size: 1.3em;
+	line-height: 1.8em;
+	color: #231815;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .TEXT span{
+	font-size: .9em;
+	color: #777; 
+	padding: 2px 5px;
+	line-height: 1.3em;
+	margin-right: 1em;
+	background-color: #dcdcdc;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .TEXT p:nth-of-type(1){
+	color: #ea1b1b;
+	font-weight: bold;
+	font-size: 1.8em;
+	text-indent: -.5em;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .CON_BT{
+	clear: both;
+	width: 195px;
+	height: 50px;
+	margin-top: 40px;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .CON_BT a{
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-size: 1.6em;;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+	background-color: #ffac0e;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.PC #it726 .CONTENT .CON_INTRO2 .CON_BT a:hover{
+	background-color: #ea1b1b;
+	transition: 1s;
+}
+
+/*平板小於內容js縮放*/	
+@media screen and (max-width: 1240px){
+    .PC #it726{
+        width: 1240px !important;
+        transform-origin: 0 0;
+    }
+}
+/*=========================浮水================*/
+.PC #it726 #INPUT_BOX{
+	position: absolute;
+	width:240px;
+	height:260px;
+	left:80%;
+	top: 590px;
+	background-image: url(../images/input_box/input_bg.jpg);
+	z-index: 777;}
+.PC #it726 #INPUT_BOX .BOX_CLOSE{
+	width:240px;
+	height:35px;
+	position:relative;}
+.PC #it726 #INPUT_BOX .BOX_CLOSE a{
+	display:block;
+	position:absolute;
+	width:35px;
+	height:35px;
+	right:0px;
+	top:0px;
+	background-image:url(../images/input_box/in_top_x.jpg);
+	text-indent:-9999px;}
+.PC #it726 #INPUT_BOX .QRCODE{
+	position:absolute;
+	width: 120px;
+	height: 120px;
+	top: 105px;
+}
+
+/*==============手機版================手機版==============手機版=============================================*/	
+.MOBILE #it726 .BLANK2{ width:100%; height:10px;}	
+.MOBILE .PC_LOGIN, .MOBILE .FOOT_PC{ display:none;}
+
+/*MOBILE表頭尾*/	
+.MOBILE #float_icon, .MOBILE #header, .MOBILE .CHANG, .MOBILE .FOOT_MOBILE, .MOBILE INPUT_BOX{ display:block;}
+/*MOBILE表頭尾*/	
+	
+/*消失區*/
+.MOBILE #it726 #INPUT_BOX ,.MOBILE #it726 .FOR_PC,.MOBILE #it726 .MORE_BT{display: none;}
+/*消失區尾*/
+
+.MOBILE #it726-wrapper{
+	widows: 100%;
+	overflow: hidden;
+	background-image: url(../images/it726/bg.jpg);
+	background-size: 7.5% auto;
+}
+.MOBILE #it726{
+	width: 100%;
+}
+/*主標*/
+.MOBILE #it726 .TOP{margin-top: 45px;}
+.MOBILE #it726 .TOP h1{
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 48.59%;
+	background-image: url(../images/it726/mb_in_top.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-indent: -9999px;
+}
+/*----------手機MENU------------*/
+.MOBILE #it726 .MO_MENU_BG{
+	width:100%;
+	height:45px;
+	background-color:#e6e6e6;
+	position:relative;
+	margin: 0px auto 0px auto;}
+		
+.MOBILE #it726 .MO_MENU_BG02{/*浮動使用*/
+	display:block;
+	width:100%;
+	height:45px;
+	background-color:#e6e6e6;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:999;
+	margin:0px auto;
+	}
+			
+.MOBILE #it726 .MO_MENU_BG02 a.NP_BT{/*浮動使用*/
+	width:25px;
+	height:45px;
+	position:absolute;
+	background-size:15px 26px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	text-indent:-9999px;
+	margin:0 auto;}
+
+.MOBILE #it726 .MO_MENU{
+	width:85%;
+	height:45px;
+	overflow:hidden;
+	position:relative;
+	margin:0 auto;
+	-moz-box-shadow:
+		inset 0px 0px 10px rgba(0,0,0,0.3);
+	-webkit-box-shadow:
+		inset 0px 0px 10px rgba(0,0,0,0.3);
+	box-shadow:
+		inset 0px 0px 10px rgba(0,0,0,0.3);}
+	
+.MOBILE #it726 .MO_MENU_BG a.NP_BT{
+	width:25px;
+	height:45px;
+	position:absolute;
+	background-size:15px 26px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	text-indent:-9999px;
+	margin:0 auto;}
+.MOBILE #it726 .MO_MENU ul{
+	width:390px;
+	margin:0 auto;
+	}
+.MOBILE #it726 .MO_MENU li{
+	float:left;
+	width:130px;
+	height:45px;
+	font-size:1.2em;
+	}
+.MOBILE #it726 .MO_MENU li a{
+	display:block;
+	width:100%;
+	height:45px;
+	color:#575656;
+	line-height:45px;
+	text-align:center;
+	}
+.MOBILE #it726 .MO_MENU li a.L{
+	color:#FFF;
+	line-height:45px;
+	background-color:#852cda;}
+/*CONTENT內容*/
+.MOBILE #it726 .CONTENT_W{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #ff86aa;
+	padding: 0 2%;
+}
+.MOBILE #it726 .CONTENT .CON_BG{
+	margin: 0 auto;
+	width: 100%;
+	overflow: hidden;
+	padding: 2% 0;
+}
+.MOBILE #it726 .CONTENT .CON_T{
+	margin: 0 auto;
+	width: 95%;
+	height: 55px;
+	background-image: url(../images/it726/bar_bg.jpg);
+}
+.MOBILE #it726 .CONTENT .CON_T:first-child{margin-top: 10px;}
+.MOBILE #it726 .CONTENT .CON_T p{
+	display: block;
+	font-size: 1.6em;
+	line-height: 55px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: rgb(30, 185, 169) 0px 0px 10px;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO{
+	margin: 0 auto;
+	width: 95%;
+	padding: 10px 10px 20px 10px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .PIC{
+	width: 85%;
+	margin: 5px auto 10px auto;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .PIC img{
+	width: 100%;
+	height: auto;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .TEXT{
+	width: 100%;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .TEXT p{
+	font-size: 1.1em;
+	line-height: 1.7em;
+	color: #231815;
+	text-align: center;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .TEXT span{
+	color: #ec4c20;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .TEXT p:nth-of-type(1){
+	color: #ea1b1b;
+	font-weight: bold;
+	font-size: 1.4em;
+	text-align: center
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .CON_BT{
+	clear: both;
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO .CON_BT a{
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-size: 1.4em;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+	background-color: #ffac0e;
+	border-radius: 10px;
+	border-bottom: 5px solid #eb910a;
+	font-weight: bold;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2{
+	margin: 0 auto;
+	width: 95%;
+	padding: 10px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .PIC{
+	width: 85%;
+	margin: 10px auto;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .PIC img{
+	width: 100%;
+	height: auto;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .TEXT{
+	width: 100%;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .TEXT p{
+	font-size: 1.1em;
+	line-height: 1.7em;
+	color: #231815;
+	text-align: center;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .TEXT span{
+	font-size: .9em;
+	color: #777; 
+	padding: 2px 5px;
+	line-height: 1.3em;
+	margin-right: 1em;
+	background-color: #dcdcdc;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .TEXT p:nth-of-type(1){
+	color: #ea1b1b;
+	font-weight: bold;
+	font-size: 1.4em;
+	text-align: center
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .CON_BT{
+	clear: both;
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+}
+.MOBILE #it726 .CONTENT .CON_INTRO2 .CON_BT a{
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-size: 1.4em;
+	text-align: center;
+	color: #fff;
+	line-height: 50px;
+	background-color: #ffac0e;
+	border-radius: 10px;
+	border-bottom: 5px solid #eb910a;
+	font-weight: bold;
+}
+/*浮水按鈕*/
+.MOBILE #it726 .NEW_BT_F{
+	width:100%;
+	height: 60px;
+	position:fixed;
+	bottom:0;
+	left: 0;
+	z-index:1000;
+	background-image:url(../images/bt_bg.png);
+	background-repeat:repeat;
+	padding-top:5px;
+}	
+.MOBILE #it726 .NEW_BT_F ul{
+	width:100%;
+	height:50px;
+	margin:0 auto;
+}	
+.MOBILE #it726 .NEW_BT_F li{
+	width:100%;
+	margin:0 auto;
+}
+.MOBILE #it726 .NEW_BT_F li a{
+	display:block;
+	width:95%;
+	margin:0 auto;
+	height:50px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-align:center;
+	font-size:1.5em;
+	font-weight:bold;
+	line-height:50px;
+	color: #fff;
+	background-color: #ea1b1b;
+	box-shadow: 0 0 10px #ff8567 inset;
+	border: 1px solid #ff2c2c;
+}

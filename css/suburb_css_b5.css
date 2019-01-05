@@ -1,0 +1,120 @@
+
+.index_txt05 {
+	FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px;  FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+.index_txt06 {
+	FONT-SIZE: 11pt; COLOR: #333333; LINE-HEIGHT: 22px;  FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none;font-weight: bold;}
+.index_txt07 {
+	FONT-SIZE: 10pt; COLOR: #717171; LINE-HEIGHT: 22px;  FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+.index_txt14 {
+	FONT-SIZE: 10pt; COLOR: #333333; LINE-HEIGHT: 24px;  FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+
+
+.suburbmenu_txt01 {
+	FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px;  FONT-FAMILY: "新細明體","Arial", "sans-serif"; TEXT-DECORATION: none}
+
+.suburbmenu_txt02 {
+	FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px;  FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none}
+	
+
+
+
+a.index_link02 { FONT-SIZE: 11pt; COLOR: #106dd0; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.index_link02:link { FONT-SIZE: 11pt; COLOR: #106dd0; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.index_link02:hover { FONT-SIZE: 11pt; COLOR: #169ce1; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+
+a.index_link03 { FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.index_link03:link { FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.index_link03:hover { FONT-SIZE: 10pt; COLOR: #6a50b6; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+
+a.index_link05 { FONT-SIZE: 10pt; COLOR: #707070; LINE-HEIGHT: 24px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.index_link05:link { FONT-SIZE: 10pt; COLOR: #707070; LINE-HEIGHT: 24px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.index_link05:hover { FONT-SIZE: 10pt; COLOR: #333333; LINE-HEIGHT: 24px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: underline}
+
+
+
+
+a.suburbmenu_link_Re1:link
+{FONT-SIZE: 12pt; COLOR: #fdc6f4; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+a.suburbmenu_link_Re1:visited
+{FONT-SIZE: 12pt; COLOR: #fdc6f4; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+A.suburbmenu_link_Re1:active
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+A.suburbmenu_link_Re1:hover
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+
+a.suburbmenu_link_Re2:link
+{FONT-SIZE: 12pt; COLOR: #ffcfac; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+a.suburbmenu_link_Re2:visited
+{FONT-SIZE: 12pt; COLOR: #ffcfac; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+A.suburbmenu_link_Re2:active
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+A.suburbmenu_link_Re2:hover
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+
+a.suburbmenu_link_Re3:link
+{FONT-SIZE: 12pt; COLOR: #fcf089; LINE-HEIGHT: 28px; TEXT-DECORATION: none; font-weight: bold;}
+a.suburbmenu_link_Re3:visited
+{FONT-SIZE: 12pt; COLOR: #fcf089; LINE-HEIGHT: 28px; TEXT-DECORATION: none; font-weight: bold;}
+A.suburbmenu_link_Re3:active
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none; font-weight: bold;}
+A.suburbmenu_link_Re3:hover
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none; font-weight: bold;}
+
+a.suburbmenu_link_Re4:link
+{FONT-SIZE: 12pt; COLOR: #a0efee; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+a.suburbmenu_link_Re4:visited
+{FONT-SIZE: 12pt; COLOR: #a0efee; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+A.suburbmenu_link_Re4:active
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+A.suburbmenu_link_Re4:hover
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+
+a.suburbmenu_link_Re5:link
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+a.suburbmenu_link_Re5:visited
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: none}
+A.suburbmenu_link_Re5:active
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: underline}
+A.suburbmenu_link_Re5:hover
+{FONT-SIZE: 12pt; COLOR: #ffffff; LINE-HEIGHT: 28px; TEXT-DECORATION: underline}
+
+
+
+a.suburbmenu_link_Re6  {   height: 0px; color: #ffffff; border-width: 0px 0px 1px; padding-bottom: 0px ;text-decoration: none} 
+a.suburbmenu_link_Re6:hover  {  border: #ffffff solid; height: 0px; color: #ffffff; border-width: 0px 0px 1px; padding-bottom: 1px}
+
+
+a.suburbmenu_link03 { FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.suburbmenu_link03:link { FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.suburbmenu_link03:hover { FONT-SIZE: 10pt; COLOR: #6a50b6; LINE-HEIGHT: 22px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+
+a.suburbmenu_link04 { FONT-SIZE: 10pt; COLOR: #333333; LINE-HEIGHT: 24px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.suburbmenu_link04:link { FONT-SIZE: 10pt; COLOR: #333333; LINE-HEIGHT: 24px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: none}
+a.suburbmenu_link04:hover { FONT-SIZE: 10pt; COLOR: #b80e9f; LINE-HEIGHT: 24px; FONT-FAMILY: Arial,"新細明體", Verdana ;TEXT-DECORATION: underline}
+
+a.suburbmenu_link05 {
+	 FONT-SIZE: 10pt; COLOR: #8c63ab; LINE-HEIGHT: 22px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif" }
+a.suburbmenu_link05:link {
+	 FONT-SIZE: 10pt; COLOR: #8c63ab; LINE-HEIGHT: 22px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"}
+a.suburbmenu_link05:hover{
+	 FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif";TEXT-DECORATION: none}
+
+a.suburbmenu_link06 {
+	 FONT-SIZE: 10pt; COLOR: #2275b6; LINE-HEIGHT: 22px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif" }
+a.suburbmenu_link06:link {
+	 FONT-SIZE: 10pt; COLOR: #2275b6; LINE-HEIGHT: 22px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"}
+a.suburbmenu_link06:hover{
+	 FONT-SIZE: 10pt; COLOR: #555555; LINE-HEIGHT: 22px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif";TEXT-DECORATION: none}
+
+
+
+.suburb_opacity {
+filter:alpha(opacity=60);/*IE瀏覽器*/
+opacity: 0.6;/*非IE瀏覽器*/
+}
+
+.suburb_opacity_2 {
+filter:alpha(opacity=10, finishopacity=90, style=1);/*IE瀏覽器*/
+opacity: 0.7; finishopacity=0.9 ; style=1;/*非IE瀏覽器*/
+}
+
