@@ -54,6 +54,9 @@
 	/* [3] */
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 }
+.MOBILE .NFIX + div {
+	margin-top: 45px !important;
+}
 .MOBILE .NFIX_60 {
 	/*浮動置頂*/
 	position: fixed;
@@ -74,7 +77,7 @@
   background-repeat: no-repeat;
 }
 .MOBILE #nextBtn{
-  background-image: url(../../images/next.png); 
+  background-image: url(../../images/next.png);
   background-position: center center;
   position: absolute;
   right: 0;

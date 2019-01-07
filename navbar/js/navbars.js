@@ -14,9 +14,12 @@
     base.$el = $(el);
     // base.el = el;
 
-    // Cached objects 
+    // Cached objects
     base.$win = $(window);
     base.$doc = $(document);
+
+    base.updateNavbarOnScrolling = true;
+
     // Initialize
     base.init = function () {
       base.options = $.extend({}, $.action.defaultOptions, options);
@@ -89,7 +92,7 @@
     base.initSwipeSetting = function () {
       $(base.swipeId).addClass('swipe');
       $("div[id^=" + base.pageId.replace('#', '') + "]").wrapAll('<div class="swipe-wrap"></div>');
-      $(base.pageId + '.swipe .swipe-wrap').css('height', parseInt($(base.pageId + 1).css('height'), 10));
+      $(base.swipeId + '.swipe .swipe-wrap').css('height', parseInt($(base.pageId + "1").css('height'), 10));
     }
     // Third party css import
     base.importCSS = function (name) {
@@ -111,9 +114,14 @@
       s.parentNode.insertBefore(script, s);
     }
     base.triggerScrollingTop = function (offsetTop, deviation) {
+      base.updateNavbarOnScrolling = false;
       $('body, html').animate({
         scrollTop: offsetTop - deviation
-      }, 200);
+      }, 200, function () {
+          setTimeout(function () {
+            base.updateNavbarOnScrolling = true;
+          }, 100);
+      });
     }
     // page swipe actively or passively
     base.triggerPageSwiped = function ($self, id) {
@@ -219,7 +227,7 @@
       let vltFixed = base.options.horzbar.vltFixed;
       let overhead = base.options.horzbar.overhead;
       const eTop1 = base.overHeadHeight();
-      let eTop = overhead ? eTop1 - 45 - 45 : 45;
+      let eTop = overhead ? eTop1 : 45;
       if (vltFixed == true && scrollbarLocation >= eTop) {
         $el.addClass('NFIX');
       } else {
@@ -240,14 +248,17 @@
     base.triggerNavbarScrolling = function (curActIdx) {
       let $$li = base.lis;
       let leftPos = 'undefined';
-      if (curActIdx == 0) {
-        base.toggleClass($$li, curActIdx);
-        base.scrollToLeft(curActIdx, leftPos, 100, 0)
-      } else {
-        // idxActive = curActIdx;
-        console.log(curActIdx);
-        base.toggleClass($$li, curActIdx);
-        base.scrollToLeft(curActIdx, leftPos, 100, 0)
+      let oldActIdx = base.staticCurActIdx();
+      if (curActIdx !== oldActIdx) {
+        if (curActIdx == 0) {
+          base.toggleClass($$li, curActIdx);
+          base.scrollToLeft(curActIdx, leftPos, 100, 0)
+        } else {
+          // idxActive = curActIdx;
+          console.log(curActIdx);
+          base.toggleClass($$li, curActIdx);
+          base.scrollToLeft(curActIdx, leftPos, 100, 0)
+        }
       }
     }
     base.toggleClass = function ($self, curActIdx) {
@@ -303,8 +314,8 @@
       if (target.matches('#nextBtn') || target.matches('#prevBtn')) {
         let offsetTop = 'undefined';
         let curActIdx = base.staticCurActIdx();
-        base.triggerNavbarScrolled($self, target.id, curActIdx);
-        base.triggerClassAdded($self, target.id, curActIdx);
+        // base.triggerNavbarScrolled($self, target.id, curActIdx);
+        // base.triggerClassAdded($self, target.id, curActIdx);
         base.triggerToSpeciPos($self, target.id, curActIdx, offsetTop);
         return;
       }
@@ -319,7 +330,7 @@
       }
     })
 
-    // On scroll and load listener	    
+    // On scroll and load listener
     base.$win.on('scroll', function () {
       // when window is scrolling
       let $self = $(this);
@@ -327,7 +338,7 @@
       base.triggerNavbarFixed(base.$el, scrollbarLocation);
       let curActIdx = base.dynamicCurActIdx();
       // console.log(base.curActIdx);
-      if (!base.isSwipe) {
+      if (!base.isSwipe && base.updateNavbarOnScrolling) {
         base.triggerNavbarScrolling(curActIdx);
         return;
       }
