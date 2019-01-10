@@ -118,9 +118,9 @@
       $('body, html').animate({
         scrollTop: offsetTop - deviation
       }, 200, function () {
-          setTimeout(function () {
-            base.updateNavbarOnScrolling = true;
-          }, 100);
+        setTimeout(function () {
+          base.updateNavbarOnScrolling = true;
+        }, 100);
       });
     }
     // page swipe actively or passively
@@ -329,7 +329,9 @@
         return;
       }
     })
-
+    base.$win.on('resize', function () {
+      base.initBarSetting().fn;
+    });
     // On scroll and load listener
     base.$win.on('scroll', function () {
       // when window is scrolling
