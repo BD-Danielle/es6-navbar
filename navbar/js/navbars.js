@@ -28,7 +28,7 @@
       base.className = base.options.horzbar.class;
       base.ul = base.$el.find('ul');
       base.lis = base.$el.find('ul li');
-      // base.liAct = base.$el.find('ul li' + base.className);
+      // base.liAct = base.$el.find('ul li' +'.'+ base.className);
       base.liLength = base.lis.length;
       if (base.isSwipe) {
         base.swipeId = base.options.horzpage.id;
@@ -49,6 +49,7 @@
     }
     // Horzbar default setting
     base.initBarSetting = function () {
+      console.log('window resize');
       let $self = base.$el;
       let columns = base.options.horzbar.columns;
       let winWidth = $('html, body').get(0).getBoundingClientRect().width + 4;
@@ -66,9 +67,9 @@
     }
     base.Swipe = function () {
       let swipePage = 1;
-      let $swipe = $('.MOBILE ' + base.swipeId + '.swipe .swipe-wrap');
+      let $swipe = $('.MOBILE ' + '#' + base.swipeId + '.swipe .swipe-wrap');
       // $swipe.css('height', parseInt($(base.pageId + swipePage).css('height'), 10));
-      let mySwipe = Swipe(document.getElementById(base.swipeId.replace('#', '')), {
+      let mySwipe = Swipe(document.getElementById(base.swipeId), {
         callback: function (index, elem) {
           // console.log('index: ' + index, 'elem: ' + elem);
           let id = 'undefined';
@@ -80,7 +81,7 @@
           // console.log('index: ' + index, 'elem: ' + elem);
           swipePage = index + 1;
           console.log(swipePage);
-          let thisPageHeight = parseInt($(base.pageId + swipePage).css('height'), 10);
+          let thisPageHeight = parseInt($('#' + base.pageId + swipePage).css('height'), 10);
           let slideTopPos = 0;
           $swipe.animate({ 'height': thisPageHeight }, 300);
           $('html, body').animate({ 'scrollTop': (slideTopPos) + 'px' }, 300);
@@ -91,8 +92,8 @@
     // Horzpage default setting
     base.initSwipeSetting = function () {
       $(base.swipeId).addClass('swipe');
-      $("div[id^=" + base.pageId.replace('#', '') + "]").wrapAll('<div class="swipe-wrap"></div>');
-      $(base.swipeId + '.swipe .swipe-wrap').css('height', parseInt($(base.pageId + "1").css('height'), 10));
+      $("div[id^=" + base.pageId + "]").wrapAll('<div class="swipe-wrap"></div>');
+      $(base.swipeId + '.swipe .swipe-wrap').css('height', parseInt($('#' + base.pageId + "1").css('height'), 10));
     }
     // Third party css import
     base.importCSS = function (name) {
@@ -179,7 +180,7 @@
         let target = $(this).attr('href'); //Get the target
         let offsetTop = $(target).offset().top;
         if (offsetTop <= scrollbarLocation + deviation) {
-          idxs.push(parseInt($(this).attr('href').replace(base.pageId, ''), 10));
+          idxs.push(parseInt($(this).attr('href').replace('#' + base.pageId, ''), 10));
         }
       });
       let dynamicCurActIdx = Math.max.apply(null, idxs) - 1;
@@ -189,7 +190,7 @@
       return dynamicCurActIdx;
     }
     base.staticCurActIdx = function () {
-      let staticCurActIdx = base.$el.find('ul li' + base.className).index();
+      let staticCurActIdx = base.$el.find('ul li' + '.' + base.className).index();
       console.log('staticCurActIdx: ' + staticCurActIdx);
       if (staticCurActIdx == -1) {
         staticCurActIdx = 0;
@@ -201,25 +202,25 @@
       switch (id) {
         case "nextBtn":
           base.toggleClass(base.lis, curActIdx = (curActIdx + 1) % base.liLength);
-          // base.lis.eq((curActIdx + 1) % base.liLength).siblings().removeClass(base.className.replace('.', ''));
-          // base.lis.eq((curActIdx + 1) % base.liLength).addClass(base.className.replace('.', ''));
+          // base.lis.eq((curActIdx + 1) % base.liLength).siblings().removeClass(base.className);
+          // base.lis.eq((curActIdx + 1) % base.liLength).addClass(base.className);
           break;
         case "prevBtn":
           base.toggleClass(base.lis, curActIdx = (curActIdx + base.liLength - 1) % base.liLength);
-          // base.lis.eq((curActIdx + base.liLength - 1) % base.liLength).siblings().removeClass(base.className.replace('.', ''));
-          // base.lis.eq((curActIdx + base.liLength - 1) % base.liLength).addClass(base.className.replace('.', ''));
+          // base.lis.eq((curActIdx + base.liLength - 1) % base.liLength).siblings().removeClass(base.className);
+          // base.lis.eq((curActIdx + base.liLength - 1) % base.liLength).addClass(base.className);
           break;
         case "#div":
           // siblings() not include itself
           // let $$a = $self.parent().siblings();
           // let idx = $self.attr('href').slice(4, 5);
-          $self.parent().siblings().removeClass(base.className.replace('.', ''));
-          $self.parent().addClass(base.className.replace('.', ''));
+          $self.parent().siblings().removeClass(base.className);
+          $self.parent().addClass(base.className);
           break;
         case "undefined":
           base.toggleClass(base.lis, curActIdx);
-          // base.lis.eq(curActIdx).siblings().removeClass(base.className.replace('.', ''));
-          // base.lis.eq(curActIdx).addClass(base.className.replace('.', ''));
+          // base.lis.eq(curActIdx).siblings().removeClass(base.className);
+          // base.lis.eq(curActIdx).addClass(base.className);
           break;
       }
     }
@@ -262,8 +263,8 @@
       }
     }
     base.toggleClass = function ($self, curActIdx) {
-      $self.eq(curActIdx).siblings().removeClass(base.className.replace('.', ''));
-      $self.eq(curActIdx).addClass(base.className.replace('.', ''));
+      $self.eq(curActIdx).siblings().removeClass(base.className);
+      $self.eq(curActIdx).addClass(base.className);
     }
     base.triggerNavbarScrolled = function ($self, id, curActIdx) {
       switch (id) {
@@ -301,7 +302,7 @@
         let $swipe = $('.MOBILE ' + base.swipeId + '.swipe .swipe-wrap');
         let swipePage = base.$mySwipe.getPos() + 1;
         let slideTopPos = 0;
-        let thisPageHeight = parseInt($(base.pageId + swipePage).css('height'), 10);
+        let thisPageHeight = parseInt($('#' + base.pageId + swipePage).css('height'), 10);
         window.setTimeout(function () {
           $swipe.animate({ 'height': thisPageHeight }, 300);
           $('html, body').animate({ 'scrollTop': (slideTopPos) + 'px' }, 300);
@@ -330,7 +331,7 @@
       }
     })
     base.$win.on('resize', function () {
-      base.initBarSetting().fn;
+      base.initBarSetting();
     });
     // On scroll and load listener
     base.$win.on('scroll', function () {
@@ -355,12 +356,12 @@
       prevBtn: '#prevBtn',
       overhead: true, //sth is on navbar's head
       vltFixed: true, //navbar is not moving when window is scrolling
-      class: '.active'
+      class: 'active'
     },
     horzpage: {
       swipe: true, //boolean
-      id: '#slider', //optional
-      pageId: '#div'
+      id: 'slider', //optional
+      pageId: 'div'
     }
   };
 
