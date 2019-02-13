@@ -32,16 +32,20 @@
       base.liLength = base.lis.length;
       if (base.isSwipe) {
         base.swipeId = base.options.horzpage.id;
-        base.importJS('swipe');
+        base.importJS({
+          'path': 'navbar/js/',
+          'files': ['swipe.js'],
+          'order': 1
+        })
         base.initSwipeSetting();
       }
-      base.importCSS('navbar');
+      base.importCSS({
+        'path': 'navbar/css/',
+        'files': ['navbar.css'],
+        'order': 1
+      });
       base.initBarSetting();
       base.liWidth = base.initBarSetting().li;
-      // base.idxActive = 0;
-      // base.leftPos = 0;
-      // base.curActIdx = 0;
-      // base.maxbase.PageID;
     };
     base.overHeadHeight = function () {
       let overHeadHeight = $('.TOP h1').get(0).getBoundingClientRect().height;
@@ -96,24 +100,57 @@
       $(base.swipeId + '.swipe .swipe-wrap').css('height', parseInt($('#' + base.pageId + "1").css('height'), 10));
     }
     // Third party css import
-    base.importCSS = function (name) {
-      let link = document.createElement('link');
-      link.type = 'text/css';
-      link.href = 'navbar/css/' + name + '.css';
-      link.rel = 'stylesheet';
-      let l = document.getElementsByTagName('link')[1];
-      // Fire the loading
-      l.parentNode.insertBefore(link, l);
+    base.importCSS = function (cssOptions, callback) {
+      cssOptions.map(function (i) {
+        let link = document.createElement('link');
+        link.type = 'text/css';
+        link.href = i.path + i.files;
+        link.rel = 'stylesheet';
+        let l = document.getElementsByTagName('link')[i.order];
+        l.parentNode.insertBefore(link, l);
+      });
+      if (typeof callback !== "undefined") {
+        // argument passed and not undefined
+        callback();
+      } else {
+        // argument not passed or undefined
+        return;
+      }
     }
     // Third party module import
-    base.importJS = function (name) {
-      let script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'navbar/js/' + name + '.js';
-      let s = document.getElementsByTagName('script')[1];
-      // Fire the loading
-      s.parentNode.insertBefore(script, s);
-    }
+    // base.importJS = function (name) {
+    //   let script = document.createElement('script');
+    //   script.type = 'text/javascript';
+    //   script.src = 'navbar/js/' + name + '.js';
+    //   let s = document.getElementsByTagName('script')[1];
+    //   // Fire the loading
+    //   s.parentNode.insertBefore(script, s);
+    // }
+
+    // Use jQuery fn to prevent JS loaded wrong message 
+    base.getMultiScripts = function (jsArray, path) {
+      var _jsArray = $.map(jsArray, function (js) {
+        // console.log(jsArray);
+        return $.getScript((path || "") + js);
+      });
+
+      // _jsArray.push($.Deferred(function (deferred) {
+      //   $(deferred.resolve);
+      // })); // console.log(_jsArray);
+      return $.when.apply($, _jsArray);
+    };
+
+    // Third party module import
+    base.importJS = function (jsOptions, callback) {
+      if (jsOptions.files.length > 0) {
+        $.getScript(jsOptions.path + jsOptions.files[0]).done(function () {
+          jsOptions.files = jsOptions.files.slice(1);
+          base.importJS(jsOptions, callback);
+        });
+      } else {
+        callback();
+      }
+    };
     base.triggerScrollingTop = function (offsetTop, deviation) {
       base.updateNavbarOnScrolling = false;
       $('body, html').animate({
