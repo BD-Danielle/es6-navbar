@@ -36,7 +36,7 @@
           'path': 'navbar/js/',
           'files': ['swipe.js'],
           'order': 1
-        })
+        });
         base.initSwipeSetting();
       }
       base.importCSS({
@@ -53,7 +53,6 @@
     }
     // Horzbar default setting
     base.initBarSetting = function () {
-      console.log('window resize');
       let $self = base.$el;
       let columns = base.options.horzbar.columns;
       let winWidth = $('html, body').get(0).getBoundingClientRect().width + 4;
@@ -132,7 +131,7 @@
 
     // Use jQuery fn to prevent JS loaded wrong message 
     base.getMultiScripts = function (jsArray, path) {
-      var _jsArray = $.map(jsArray, function (js) {
+      let _jsArray = $.map(jsArray, function (js) {
         // console.log(jsArray);
         return $.getScript((path || "") + js);
       });
@@ -150,8 +149,16 @@
           jsOptions.files = jsOptions.files.slice(1);
           base.importJS(jsOptions, callback);
         });
-      } else {
+      }
+      // else {
+      //   callback();
+      // }
+      if (typeof callback !== "undefined") {
+        // argument passed and not undefined
         callback();
+      } else {
+        // argument not passed or undefined
+        return;
       }
     };
     base.triggerScrollingTop = function (offsetTop, deviation) {
