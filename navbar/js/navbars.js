@@ -101,12 +101,15 @@
     }
     // Third party css import
     base.importCSS = function (cssOptions, callback) {
-      cssOptions.map(function (i) {
+      let files = cssOptions.files;
+      let path = cssOptions.path;
+      let order = cssOptions.order;
+      files.map(function (file) {
         let link = document.createElement('link');
         link.type = 'text/css';
-        link.href = i.path + i.files;
+        link.href = path + file;
         link.rel = 'stylesheet';
-        let l = document.getElementsByTagName('link')[i.order];
+        let l = document.getElementsByTagName('link')[order];
         l.parentNode.insertBefore(link, l);
       });
       if (typeof callback !== "undefined") {
