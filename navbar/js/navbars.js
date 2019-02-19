@@ -149,16 +149,8 @@
           jsOptions.files = jsOptions.files.slice(1);
           base.importJS(jsOptions, callback);
         });
-      }
-      // else {
-      //   callback();
-      // }
-      if (typeof callback !== "undefined") {
-        // argument passed and not undefined
-        callback();
       } else {
-        // argument not passed or undefined
-        return;
+        callback();
       }
     };
     base.triggerScrollingTop = function (offsetTop, deviation) {
