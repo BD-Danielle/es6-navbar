@@ -337,16 +337,20 @@
       };
     });
     base.$win.on('orientationchange', function () {
-      if (base.isSwipe) {
-        let $swipe = $('.MOBILE ' + base.swipeId + '.swipe .swipe-wrap');
+      if(base.isSwipe == true && base.isScroll == 'false' && base.device == 'MOBILE'){
+        base.initBarSetting();
+        base.liWidth = base.initBarSetting().li;
+        let $swipe = base.$swipe;
         let swipePage = base.$mySwipe.getPos() + 1;
         let slideTopPos = 0;
-        let thisPageHeight = parseInt($('#' + base.pageId + swipePage).css('height'), 10);
-        window.setTimeout(function () {
+        let thisPageHeight = $('#' + base.pageId + swipePage).get(0).getBoundingClientRect().height | 0;
+  
+        base.win.setTimeout(function () {
           $swipe.animate({ 'height': thisPageHeight }, 300);
-          $('html, body').animate({ 'scrollTop': (slideTopPos) + 'px' }, 300);
+          base.$body.animate({ 'scrollTop': (slideTopPos) + 'px' }, 300);
         }, 200);
-      };
+      }
+      base.scrollToLeft(base.staticCurActIdx(), 'undefined', 100, 0);
     });
     base.$el.on('click', function (e) {
       let target = e.target;

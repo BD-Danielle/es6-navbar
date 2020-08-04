@@ -1,11 +1,12 @@
 .PC .NFIX {
 	/*浮動置頂*/
-	/* position: fixed;
+	position: fixed;
 	width: 100%;
-	height: 145px;
-	left: 0;
-	top: 0;
-	z-index: 3; */
+	height: 50px;
+  top: 0;
+  /* don't use right or left to be position */
+  transform: translate(15px, 0px);
+	z-index: 3;
 }
 .MOBILE #navbar{
   position: relative;
@@ -35,7 +36,6 @@
 	float: unset !important;
 	margin-right: -4px;
 }
-
 .MOBILE .NFIX {
 	/*浮動置頂*/
 	position: fixed !important;
@@ -66,6 +66,9 @@
 	margin-top: 45px;
 	z-index: 3;
 }
+.PC #nextBtn{
+  display: none;
+}
 .MOBILE #prevBtn{
   background-image: url(../../images/pre.png);
   background-position: center center;
@@ -75,6 +78,9 @@
   height: 45px;
   background-size: 45%;
   background-repeat: no-repeat;
+}
+.PC #nextBtn{
+  display: none;
 }
 .MOBILE #nextBtn{
   background-image: url(../../images/next.png);
@@ -97,16 +103,16 @@
 .MOBILE .active > a{
   color:#fff !important;
 }
-.MOBILE .swipe{
-  overflow: hidden;
-  visibility: hidden;
+.swipe{
+  /* overflow: hidden; */
+  /* visibility: hidden; */
   position: relative;
 }
-.MOBILE .swipe-wrap{
+.swipe-wrap{
   overflow: hidden;
   position: relative;
 }
-.MOBILE .swipe-wrap > div{
+.swipe-wrap > div{
   float: left;
   width: 100%;
   position: relative;
