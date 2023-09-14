@@ -1,0 +1,18 @@
+
+.PC .NFIX {
+  position: fixed !important;
+  width: 100% !important;
+  height: 60px !important;
+  transform: none;
+  margin-top: 0 !important;
+}
+.MOBILE #navbar {
+  height: 45px;
+  z-index: 1;
+}
+.MOBILE #navbar ul {
+  position: initial;
+}
+.MOBILE #navbar ul li:first-child {
+  /* margin-right: 0; */
+}

@@ -1,0 +1,2225 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+  <link href="css/member_act.css" rel="stylesheet" type="text/css" />
+  <link href="css/form.css" rel="stylesheet" type="text/css" />
+  <link href="css/m204.css" rel="stylesheet" type="text/css" />
+  <link href="css/reset.css" rel="stylesheet" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <title>白金會員服務</title>
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/jquery.marquee.js"></script>
+  <script src="https://wwwstage.click108.com.tw/wenqu/v0.2.7/js/wenqu.js"></script>
+  <script src="js/peekaboo.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      if (window.jQuery) {
+        // jQuery is loaded  
+        $('#marquee-vertical').marquee({
+          enable: true,
+          direction: 'vertical',
+          itemSelecter: 'li',
+          delay: 1500,
+          speed: 1,
+          timing: 1,
+          mouse: true
+        });
+        var peekaboo = new Peekaboo();
+        peekaboo.setArea('target', [
+          ['begin', 'end']
+        ]);
+
+        window.onscroll = function () {
+          peekaboo.start();
+        }
+        // 使用者在分別在 .VIP_PARENT || .VIP_SALS 點擊立即加入后分別導向 #div4大區的各別小區
+        $('#role1, #role2').on('click', function (e) {
+          e.preventDefault();
+          if ($(this)['context']['id'] == 'role1') {
+            $(window).scrollTop($('#div4 .BAR_OP').eq(1).offset().top - 60);
+          } else {
+            $(window).scrollTop($('#div4 .BAR_OP').eq(2).offset().top - 60);
+          }
+
+        })
+      } else {
+        alert('jQuery is not loaded');
+      }
+    }
+  </script>
+  <style>
+    .MOBILE #M204 .LM_MENU li{ padding: 0 !important;}
+    .MOBILE #M204 .TOP {
+      margin-top: 0 !important;
+    }
+
+    .active {
+      background-color: #ffdfcc;
+    }
+
+    .active > a {
+      color: #505050;
+    }
+
+    .MOBILE #nextBtn {
+      background-image: url(./images/next.png) !important;
+    }
+
+    .MOBILE #prevBtn {
+      background-image: url(./images/pre.png) !important;
+    }
+
+    .MOBILE #M204 .LM_MENU .MENU {
+      float: none;
+    }
+
+    .MOBILE #navbar ul {
+      height: auto !important;
+    }
+
+    .MOBILE #M204 .LM_MENU li a {
+      line-height: 45px !important;
+    }
+
+    .PC #M204 .LM_MENU li a {
+      line-height: 60px !important;
+    }
+
+    .PC #M204 .LM_MENU ul,
+    .PC #M204 .CON_IN {
+      max-width: 900px;
+      width: auto;
+    }
+
+    .PC #M204 .CB_CON img {
+      width: 100%;
+    }
+
+    .PC #M204 .CB_CON ul.SHIP4 li {
+      width: 49.5%;
+    }
+
+    .PC ul.pq_INFOR2 li {
+      width: 43% !important;
+    }
+
+    .PC .TIT.xc-flex .M_ACT_t04 {
+      /* font-size: 1.5vh; */
+    }
+
+    .TIT.xc-flex .M_ACT_t04.M_ACT_RED {
+      margin-left: 2%;
+    }
+
+    .PC .TIT.xc-flex>span:nth-child(2) {
+      width: 71%;
+      line-height: 1.5;
+      padding: 5px 0;
+    }
+
+    .PC .TIT.xc-flex>span:first-child {
+      width: 90px;
+      height: 30px;
+      line-height: 30px !important;
+      margin: 5px 8px !important;
+      padding: 0 !important;
+    }
+
+    .PC .TIT.xc-flex {
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 0 10px !important;
+      height: auto !important;
+    }
+
+    a.BT_COLOR02:hover {
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3d73ce+0,528cef+100 */
+      background: #3d73ce;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #3d73ce 0%, #528cef 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #3d73ce 0%, #528cef 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #3d73ce 0%, #528cef 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d73ce', endColorstr='#528cef', GradientType=0);
+      /* IE6-9 */
+    }
+
+    a.BT_COLOR02 {
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#528cef+0,3d73ce+100 */
+      background: #528cef;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #528cef 0%, #3d73ce 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #528cef 0%, #3d73ce 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #528cef 0%, #3d73ce 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#528cef', endColorstr='#3d73ce', GradientType=0);
+      /* IE6-9 */
+    }
+  </style>
+</head>
+
+<body class="MOBILE out-of-blue">
+  <!-- pc表頭開始 -->
+  <div class="PC_LOGIN">
+    <style type="text/css">
+      <!--
+      .lo_txt01 {
+        FONT-SIZE: 10pt;
+        COLOR: #555555;
+        LINE-HEIGHT: 20px;
+        FONT-FAMILY: "Arial", "Helvetica", "sans-serif";
+        TEXT-DECORATION: none
+      }
+
+      .lo_txt02 {
+        FONT-SIZE: 10pt;
+        COLOR: #555555;
+        LINE-HEIGHT: 22px;
+        FONT-FAMILY: "Arial", "Helvetica", "sans-serif";
+        TEXT-DECORATION: none;
+        font-weight: bold;
+      }
+
+      .lo_link01 {
+        FONT-SIZE: 10pt;
+        COLOR: #555555;
+        LINE-HEIGHT: 22px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        TEXT-DECORATION: none
+      }
+
+      .lo_link01:link {
+        FONT-SIZE: 10pt;
+        COLOR: #555555;
+        LINE-HEIGHT: 22px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        TEXT-DECORATION: none
+      }
+
+      .lo_link01:hover {
+        FONT-SIZE: 10pt;
+        COLOR: #6f4ed1;
+        LINE-HEIGHT: 22px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        TEXT-DECORATION: none
+      }
+
+      .lo_link02 {
+        FONT-SIZE: 10pt;
+        COLOR: #6a50b6;
+        LINE-HEIGHT: 18px;
+        FONT-FAMILY: Arial, "新細明體", Verdana, simsun;
+        ;
+        TEXT-DECORATION: none
+      }
+
+      .lo_link02:link {
+        FONT-SIZE: 10pt;
+        COLOR: #6a50b6;
+        LINE-HEIGHT: 18px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        TEXT-DECORATION: none
+      }
+
+      .lo_link02:hover {
+        FONT-SIZE: 10pt;
+        COLOR: #6a50b6;
+        LINE-HEIGHT: 18px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        text-decoration: underline;
+      }
+
+      .lo_link03 {
+        FONT-SIZE: 10pt;
+        COLOR: #9c65cc;
+        LINE-HEIGHT: 22px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        TEXT-DECORATION: none
+      }
+
+      .lo_link03:link {
+        FONT-SIZE: 10pt;
+        COLOR: #9c65cc;
+        LINE-HEIGHT: 22px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        TEXT-DECORATION: none
+      }
+
+      .lo_link03:hover {
+        FONT-SIZE: 10pt;
+        COLOR: #9b5eca;
+        LINE-HEIGHT: 22px;
+        FONT-FAMILY: Arial, "新細明體", Verdana;
+        TEXT-DECORATION: none
+      }
+
+      #menu_title {
+        margin: 0;
+        padding: 0
+      }
+
+      #menu_title li {
+        float: left;
+        list-style: none;
+        font: 10pt Tahoma, Arial
+      }
+
+      #menu_title li a {
+        display: block;
+        padding: 0px 0px 0px 00px;
+        [;
+        padding: 0px 0px 0px 0px;
+        ];
+        padding: 0px 0px 0px 0px\9;
+        border-left: 0px solid white;
+        white-space: nowrap
+      }
+
+      #menu_title li ul {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 100000;
+        visibility: hidden;
+      }
+
+      #menu_title li ul li {
+        float: none;
+        display: inline
+      }
+
+      img,
+      form,
+      object,
+      embed {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .pv_img {
+        height: 0px;
+        display: none
+      }
+      -->
+    </style>
+    <script type="text/javascript">
+      if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='/js/jquery-1.7.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+      }
+    </script>
+    <link type="text/css" href="https://imgs.click108.com.tw/title/logocss.css" rel="stylesheet" />
+    <link type="text/css" href="https://imgs.click108.com.tw/title/suburb_css_b5.css" rel="stylesheet" />
+    <div align="center">
+      <div
+        style="width: 100%; height: 38px; text-align: center; background: url('https://imgs.click108.com.tw/title/product/images/logomenu/bg.jpg'); overflow: hidden;">
+        <div style="max-width: 1204px; text-align: center; margin: 0 auto;">
+          <div style="max-width: 968px; margin: 0 auto;">
+            <div style="float: left; width: 245px; height: 38px; text-align: left; padding-top: 3px;"><a
+                href="/index.php"><img src="https://imgs.click108.com.tw/title/product/images/logomenu/logo02.gif"
+                  width="245" height="32" border="0" /></a></div>
+            <div style="float: right; max-width: 631px; ">
+              <div style="width: 100%;">
+                <div style="float: right; width: 70px;">
+                  <div style="width: 1px; float: left;"><img
+                      src="https://imgs.click108.com.tw/title/product/images/logomenu/line.jpg" width="1" height="38" />
+                  </div>
+                  <div style="width: 68px; height: 38px; float: left; text-align: center;">
+                    <div style="width: 55px; text-align: center; padding-top: 9px; margin: 0 auto;">
+                      <a href="#" id="navTransSimpBtnAnchor" onmouseout="MM_swapImgRestore()"
+                        onmouseover="MM_swapImage('navTransSimpBtn','','https://imgs.click108.com.tw/title/product/images/logomenu_2016/text02_2.png',1)"><img
+                          src="https://imgs.click108.com.tw/title/product/images/logomenu_2016/text_2.png" width="55"
+                          height="20" border="0" id="navTransSimpBtn" /></a><a href="#" id="navTransTradBtnAnchor"
+                        onmouseout="MM_swapImgRestore()"
+                        onmouseover="MM_swapImage('navTransTradBtn','','https://imgs.click108.com.tw/title/product/images/logomenu_2016/text02.png',1)"
+                        style="display: none;"><img
+                          src="https://imgs.click108.com.tw/title/product/images/logomenu_2016/text.png" width="55"
+                          height="20" border="0" id="navTransTradBtn" /></a>
+                    </div>
+                  </div>
+                  <div style="width: 1px; float: left;"><img
+                      src="https://imgs.click108.com.tw/title/product/images/logomenu/line.jpg" width="1" height="38" />
+                  </div>
+                </div>
+                <div style="float: right; height: 38px; padding-right: 5px; padding-top: 8px;"><span
+                    class="lo_link01"><a href="/login.php?new_header=1" class="lo_link01">登入</a></span><span
+                    class="lo_txt04">&nbsp;│&nbsp;</span><span class="index_link03"><a href="/n_freemember.php"
+                      class="lo_link01">免費加入會員</a></span></div>
+                <!--<div style="float: right; height: 38px; padding-right: 5px; padding-top: 8px; display:none;" onclick="javascript: alert($(window).width() + 'x' + $(window).height());">測試寬度</div>-->
+              </div>
+            </div>
+            <div style="clear: both;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/tongwentang/tongwen.js"></script>
+    <link href="https://imgs.click108.com.tw/terms/css/forprivacy.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      .txt_02_gdpr {
+        font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "細明體", Arial, Helvetica;
+        font-size: 16px;
+        line-height: 24px;
+        color: #323232;
+      }
+
+      #FRAME_ALL {
+        background-color: #fbfbfb;
+      }
+
+      #FRAME_ALL .UN_FRAME_gdpr .BOX_pg {
+        width: 740px;
+        height: auto;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+    </style>
+    <script>
+      var agreeGdprPop = false;
+
+      function agreeGdprClose(t) {
+        if (t == 1) $('#FRAME_ALL').hide();
+        setCookie_gdpr("agreeGdprPop", '2');
+        agreeGdprPop = false;
+        $.ajax({
+          type: "POST",
+          url: "/include/gdpr/GDPR_ajax.php",
+          data: {
+            gtype: t,
+            from: "PC"
+          },
+          dataType: "json",
+          success: function (data) { }
+        });
+      }
+
+      function setCookie_gdpr(name, value) {
+        var exp = new Date();
+        var domain_c = "click108.com.tw";
+        exp.setTime(exp.getTime() + 365 * 24 * 60 * 60 * 1000);
+        document.cookie = name + "=" + escape(value) + ";domain=" + domain_c + ";expires=" + exp.toGMTString() + ";path=/";
+      }
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          var t = document.documentElement.scrollTop || document.body.scrollTop;
+          if ($('#news_footer').offset() != null) {
+            hidefooter("#news_footer");
+          } else if ($('.FOOT_PC').offset() != null) {
+            hidefooter(".FOOT_PC");
+          } else if ($('.FOOTER').offset() != null) {
+            hidefooter(".FOOTER");
+          } else {
+            if ((t + $(window).height() + 50 > $("body table").last().offset().top)) {
+              // alert(t+$(window).height()+'----'+$("body table").last().offset().top);
+              $('#FRAME_ALL').hide();
+            } else {
+              if (agreeGdprPop) {
+                $("#FRAME_ALL").show();
+              }
+            }
+          }
+        });
+      });
+
+      function hidefooter(obj) {
+        var t = document.documentElement.scrollTop || document.body.scrollTop;
+        if ($(obj).offset() != null) {
+          if ((t + $(window).height() + 50 > $(obj).offset().top)) {
+            //alert(t+'---'+$(window).height()+'----'+$("#news_footer").offset().top) ;
+            if (t < 10 && agreeGdprPop) $("#FRAME_ALL").show();
+            else $('#FRAME_ALL').hide();
+          } else {
+            if (agreeGdprPop) {
+              $("#FRAME_ALL").show();
+            }
+          }
+        }
+      }
+      $(function () {
+        if (agreeGdprPop) {
+          $(".FRAME_ALL").show();
+        }
+      }); 
+    </script>
+  </div>
+  <!-- pc表頭結束 -->
+  <!--手機表頭-->
+  <!--------------手機表頭----------------->
+  <script src="https://ms.click108.com.tw/js/header.2017/menu.js"></script>
+  <script src="https://ms.click108.com.tw/js/header.2017/url-search-params-polyfill.js"></script>
+  <script src="https://ms.click108.com.tw/js/header.2017/history_pop.js"></script>
+  <!-- 20210219 紀錄event -->
+  <script src="https://wwwstage.click108.com.tw/api/eventRecord/eventRecord.js"></script>
+  <link href="https://imgs.click108.com.tw/mobile/T1/header.2017/css/top_menu.css" rel="stylesheet" type="text/css" />
+  <link href="https://imgs.click108.com.tw/mobile/T1/header.2017/css/top_menu_util.css" rel="stylesheet"
+    type="text/css" />
+  <link href="https://imgs.click108.com.tw/mobile/T1/header.2017/css/history_pop.css" rel="stylesheet"
+    type="text/css" />
+  <link href="https://imgs.click108.com.tw/mobile/T1/header.2017/css/history_pop_util.css" rel="stylesheet"
+    type="text/css" />
+  <link href="https://imgs.click108.com.tw/mobile/T1/header.2017/css/float_icon.css" rel="stylesheet" type="text/css" />
+  <link href="https://imgs.click108.com.tw/mobile/T1/header.2017/css/header.css?v=20190725" rel="stylesheet"
+    type="text/css" />
+  <link href="https://imgs.click108.com.tw/mobile/T1/header.2017/css/footer.css" rel="stylesheet" type="text/css" />
+  <style>
+    .MOBILE * {
+      -webkit-box-sizing: border-box;
+      -webkit-text-size-adjust: none;
+      text-decoration: none;
+    }
+  </style>
+  <script>
+    function alert_index(choose) {
+      switch (choose) {
+        case 1:
+          if (confirm("是否願意連至PC版頁面")) {
+            window.open("https://wwwstage.click108.com.tw/fortune/index.php");
+          }
+          break;
+        case 2:
+          if (confirm("是否願意連至PC版頁面")) {
+            window.open("https://wwwstage.click108.com.tw/free.php");
+          }
+          break;
+      }
+    }
+
+    $(window).load(function () {
+      $("#show_top").click(function () {
+        $("html,body").animate({
+          scrollTop: 0
+        }, 300);
+        return false;
+      });
+    });
+
+    if ($('.PC').length == 0) {
+      var show_top_ = false;
+
+      $(window).scroll(function () {
+        if (document.documentElement.clientHeight < document.documentElement.offsetHeight && show_top_ == false && $('.PC').length == 0) {
+          show_top_ = true;
+          $("#show_top").show();
+        }
+      });
+    }
+    var header_img = 'https://imgs.click108.com.tw/mobile/T1/header.2017/';
+
+    if (typeof TongWen === 'undefined') {
+      let t = document.createElement('script');
+      t.src = 'https://wwwstage.click108.com.tw/js/tongwentang/tongwen.js';
+      document.body.appendChild(t);
+      // console.log('TongWen activated');
+    }
+  </script>
+  <div class="page" id="under_body">
+    <div id="CLOSE" class="hide"><a href="#">關閉</a></div>
+    <!--top_menu_頭-->
+    <div id="top_menu" class="hide">
+      <div class="MENU_BG">
+        <div class="T_BAR"><a
+            href="https://wwwstage.click108.com.tw/mobile/login.php?DestURL=aHR0cDovL3d3d3N0YWdlLmNsaWNrMTA4LmNvbS50dy9WSVBfZmUvbWVtYmVyMTA4X3Byby5waHA/RU5EPTE=">登入</a>&nbsp;|&nbsp;<a
+            href="https://wwwstage.click108.com.tw/member/register.php?DestURL=aHR0cDovL3d3d3N0YWdlLmNsaWNrMTA4LmNvbS50dy9WSVBfZmUvbWVtYmVyMTA4X3Byby5waHA/RU5EPTE=#register">註冊</a>
+        </div>
+        <div class="MAIN">
+          <ul>
+            <li class="full-width"><a href="https://ms.click108.com.tw/u000/index.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/0.png);"></span>會員專區
+                (我的運勢)</a></li>
+            <li><a href="https://wwwstage.click108.com.tw/member/alf_logdata.php">消費記錄</a></li>
+            <li class="right-items"><a href="https://wwwstage.click108.com.tw/member/UseCoupon_query.php">優惠點券</a></li>
+            <li class="bottom-items"><a href="https://ms.click108.com.tw/PMember/input.php?Vender=m_topMenu">升級白金</a>
+            </li>
+            <li class="right-items bottom-items"><a
+                href="https://ms.click108.com.tw/u000/buypoint/deposit_step1.php">點數儲值</a></li>
+          </ul>
+        </div>
+        <div class="T_BAR02">網站服務</div>
+        <div class="PR_SERVICE">
+          <ul>
+            <li><a href="https://ms.click108.com.tw/index.php?Vender=m_topMenu"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/16.png);"></span>回首頁</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/unit001/free00001/input.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/zwmp.png);"></span>紫微命盤</a>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/unit001/year-half/input.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/17-2.png);"></span><span
+                  class="TEX_RED">半價批流年</span></a></li>
+            <li><a href="https://ms.click108.com.tw/fortune/index.php?Vender=m_topMenu"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/1.png);"></span>算命占卜</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/fortune/japan/index.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/2.png);"></span>日本命理</a>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/course/online/index.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/14ICON.png);"></span><span
+                  class="TEX_RED">張盛舒課程</span></a></li>
+            <li id="maestro">
+              <a id="checkPop" class="checkPop">
+                <pre><span class="top_menu_LIST_ICON" style="background-image:url('https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/20.png');"></span>親算命名</pre>
+              </a>
+              <link href="//wwwstage.click108.com.tw/wenqu/beta/css/wenqu.css" rel="stylesheet" type="text/css" />
+              <!-- <script src="//wwwstage.click108.com.tw/unit001/item00217/js/jquery-2.0.3.min.js"></script> -->
+              <script>
+                $(function () {
+                  $("#checkPop").click(function () {
+                    $('#wq-pop').show();
+                  })
+                  $('#btn-no').click(function () {
+                    $('#wq-pop').hide();
+                  })
+                  $('#btn-yes').click(function () {
+                    $('#wq-pop').hide();
+                  })
+                })
+              </script>
+              <style>
+                #maestro .wqPOP .BT02 ul a {
+                  display: block !important;
+                  width: 100% !important;
+                  height: 45px !important;
+                  font-size: 1.2em !important;
+                  color: #333 !important;
+                  text-align: center !important;
+                  line-height: 45px !important;
+                  background-color: #cfcfcf !important;
+                  -moz-border-radius: 5px !important;
+                  -webkit-border-radius: 5px !important;
+                  border-radius: 5px !important;
+                  border: 1px solid #969696 !important;
+                  box-shadow: inset 0 0 2px white !important;
+                  -moz-box-shadow: inset 0 0 2px white !important;
+                  -webkit-box-shadow: inset 0 0 2px white !important;
+                }
+
+                #maestro .wqPOP .BT02 ul li {
+                  width: 48% !important;
+                }
+
+                #maestro .wqPOP {
+                  /* overflow: inherit; */
+                  width: 60% !important;
+                  left: 67%;
+                }
+              </style>
+              <div id="wq-pop" class="wq-pop cover confirm" style="display:none;">
+                <div style="display:block">
+                  <div class="wqPOP">
+                    <div class="TBAR"></div>
+                    <div class="COM">
+                      <p align="left" style="font-size:16px;"><b>此服務尚無手機板，是否願意連至電腦版觀看?</b></p>
+                      <div class="BT02">
+                        <ul>
+                          <li id="btn-yes" class="btn-yes"><a
+                              href="https://wwwstage.click108.com.tw/Promote/PromoteX.php?Vender=m_topMenu&RedirectTo=https://wwwstage.click108.com.tw/maestro/index.php"
+                              target="_blank" target="_blank">確定</a></li>
+                          <li id="btn-no" class="btn-no"><a>取消</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/luckygod/index.php"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/icon_luckgod_m.png);"></span>金好運神筊</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/unit001/light/input.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/4.png);"></span>祈福點燈</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/fortune/korea/index.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/3.png);"></span>韓國命理</a>
+            </li>
+            <li><a href="https://shop.click108.com.tw/?Vender=m_topMenu" target="_blank"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/3-2.png);"></span>好運8</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/free/index.php?Vender=m_topMenu"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/5.png);"></span>免費算命</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/astro/index.php?Vender=m_topMenu"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/6.png);"></span>星座</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/ecal/index.php?Vender=m_topMenu"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/7.png);"></span>農民曆</a>
+            </li>
+            <li><a href="https://news-test.click108.com.tw/?Vender=m_topMenu"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/8.png);"></span>發燒文章</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/psychictest/index.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/9.png);"></span>心理測驗</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/dream/index.php?Vender=m_topMenu"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/10.png);"></span>解夢</a>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/course/index.php?Vender=m_topMenu" target="_blank"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/11.png);"></span>紫微課程</a>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/sam/svc/index.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/12.png);"></span>張盛舒專區</a>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/unit000/help/mailbox.php?Vender=m_topMenu"
+                target="_blank"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/18.png);"></span>客服中心</a>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/activate/card/index.php?Vender=m_topMenu"><span
+                  class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/21.png);"></span>開卡專區</a>
+            </li>
+            <li><a href="https://wwwstage.click108.com.tw/corp/?page=7"><span class="top_menu_LIST_ICON"
+                  style="background-image:url(https://imgs.click108.com.tw/mobile/T1/header.2017/images/top_menu/cooperation_proposal.png);"></span>合作提案</a>
+            </li>
+            <li class="bottom-padding">&nbsp;</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--top_menu_尾-->
+    <div id="ALL">
+      <!--外加推出框-->
+      <div id="top_menu_BLACK" class="BLACK"></div>
+      <!--透明遮蓋黑底-->
+      <div id="float_icon">
+        <div id="show_top" class="BACK_top" style="display:none;"><a href="#"></a></div>
+        <div class="LIST_ICON" style="display:none;"><a href="javascript:listView();"></a></div>
+      </div>
+      <!--header_頭-->
+      <div id="header" class="header_IN">
+        <div class="LOGO"><a href="https://ms.click108.com.tw/index.php?Vender=m_header">科技紫微</a></div>
+        <div class="R_LIST"><a href="#">右側選單</a></div>
+        <div class="HEADER_MENU">
+          <ul>
+            <li><a href="https://ms.click108.com.tw/astro/index.php?Vender=m_header" class="A">星座</a></li>
+            <li><a href="https://ms.click108.com.tw/fortune/index.php?Vender=m_header" class="B">算命</a></li>
+            <li><a href="https://ms.click108.com.tw/fortune/japan/index.php?Vender=m_header_index_jp" class="C">日本</a>
+            </li>
+            <li><a href="https://ms.click108.com.tw/u000/index.php?Vender=m_header" class="D">會員</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--header_尾-->
+      <script>
+        var astroRECOM = [{ "wording": "\u3010\u9054\u6469\u3011\u516d\u9053\u8f2a\u8ff4\u524d\u4e16\u8f49\u751f\u66f8", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00185\/input.php" }, { "wording": "\u3010\u4e5d\u661f\u3011\u8d85\u6e96\u96d9\u4eba\u901f\u914d", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00193\/input.php" }, { "wording": "\u3010\u516d\u8292\u661f\u5854\u7f85\u3011\u4f60\u8a72\u7e7c\u7e8c\u7b49\u4e0b\u53bb\u55ce", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00199\/input.php" }, { "wording": "\u3010\u5f35\u76db\u8212\u3011\u59d3\u540d\u6200\u611b\u914d\u5c0d", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00141\/input.php" }, { "wording": "\u5f35\u76db\u8212-\u7d2b\u5fae\u8ca1\u5bcc\u547d\u76e4", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00164\/input.php" }, { "wording": "\u5f35\u76db\u8212-\u7d2b\u5fae\u5341\u5e74\u5a5a\u7de3", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00151\/input.php" }, { "wording": "\u5f35\u76db\u8212-\u7d2b\u5fae\u547d\u683c\u8a73\u6279", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00154\/input.php" }, { "wording": "\u59d3\u540d\u795e\u7b97-\u6211\u7684\u4e94\u5e74\u6200\u611b\u6843\u82b1\u904b", "link": "https:\/\/ms.click108.com.tw\/unit001\/item00165\/input.php" }];
+        var DOMAIN = 'ms.click108.com.tw';
+        var WWW_DOMAIN = 'wwwstage.click108.com.tw';
+        var pop_items = {
+          "history": [],
+          "recommend": []
+        };
+
+        $(function () {
+          if ($('.BOX_B').length == 0) {
+            var BOX_B = $('<div class="BOX_B"></div>');
+
+            var pageStyleRules = [];
+            for (var i = 0; i < document.styleSheets.length; i++) {
+              try {
+                if (document.styleSheets[i].rules) {
+                  for (var j = 0; j < document.styleSheets[i].rules.length; j++) {
+                    pageStyleRules.push(document.styleSheets[i].rules[j].selectorText);
+                  }
+                }
+              }
+              catch (e) { }
+            }
+            if (pageStyleRules.indexOf('.BOX_B') == -1) {
+              $(BOX_B).css('display', 'none');
+              $(BOX_B).css('width', '100%');
+              $(BOX_B).css('height', '100%');
+              $(BOX_B).css('position', 'fixed');
+              $(BOX_B).css('top', '0');
+              $(BOX_B).css('left', '0');
+              $(BOX_B).css('z-index', '10000');
+              $(BOX_B).css('background-color', '#000000');
+              $(BOX_B).css('opacity', '0.5');
+            }
+
+            $('body').append(BOX_B);
+          }
+          $('#new_vip_pop').click(function () {
+            $('.panel_mb').css('display', 'block')
+            $('body').addClass('noscroll')
+          });
+        });
+      </script>
+      <div id="h_head_1"></div>
+      <!--手機表頭尾-->
+      <!--WRAPPER最外圈-->
+      <div id="M204-wrapper">
+        <div class="WATERMARK" id="watermark">
+          <div class="TITLE"><a href="javascript:;"
+              onclick="document.getElementById('watermark').style.display='none';"></a></div>
+          <div class="CON_B">
+            <ul>
+              <li>限時<span class="M_ACT_RED">送</span>線上親算</li>
+              <li>命+運詳批</li>
+              <li>11種人際互動分析</li>
+              <li>加贈300元算命金</li>
+              <p class="M_ACT_t05_s">原價12,000</p>
+              <p class="M_ACT_t04">現在只要<span class="M_ACT_t04 M_ACT_RED">NT$3,600</span></p>
+            </ul>
+            <a href="#a04" class="BT_COLOR06">立即加入</a>
+          </div>
+        </div>
+        <div id="M204">
+          <div id="begin"></div>
+          <!--PC標題-->
+          <link rel="stylesheet" href="./js/navbar/css/navbar.css">
+          <link rel="stylesheet" href="./js/navbar/css/navbar_revise.css">
+          <script src="js/navbar/js/ai.es6.navbars.js"></script>
+
+          <div class="TOP" id="navbarTop">
+            <h1>白金會員服務</h1>
+            <div class="C_SAM">
+            </div>
+          </div>
+          <!--PC標題 END-->
+          <!--LM_MENU-->
+          <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+
+              const options = {
+                // 自定義選項
+                xBar: {
+                  fixed: true,
+                  top: 45, //navbar is not moving when window is scrolling
+                  scroll: true, //boolean
+                  id: '#navbar',
+                  columns: 3, //default column number
+                  next: "#nextBtn",
+                  prev: "#prevBtn",
+                  overhead:  '#navbarTop', //sth is on navbar's head
+                  active: "active",
+                  contents: ".item-content"
+                },
+                xPage: {
+                  // result頁, 採單頁式的, 不需要swipe功能
+                  swipe: false, //boolean
+                  id: 'slider', //optional
+                  pageId: 'div'
+                }
+              };
+  
+              new Action("#M204-wrapper", options);
+            })
+            // 使用方法
+
+          </script>
+          <nav id="navbar" class="LM_MENU">
+            <div id="nextBtn" class="nextBtn"></div>
+            <div id="prevBtn" class="nextBtn"></div>
+            <div class="MENU navbar-collapse">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="active" href="">服務內容</a></li>
+                <li class="nav-item"><a href="">白金特色</a></li>
+                <li class="nav-item"><a href="">好評推薦</a></li>
+                <li class="nav-item"><a href="">付費方案</a></li>
+                <li class="nav-item"><a href="">客服諮詢</a></li>
+              </ul>
+            </div>
+          </nav>
+          <!--區塊1-->
+          <div class="CON_IN">
+            <div class="BOX">
+              <div class="BOX_TIT">期間限定優惠</div>
+              <div class="CB_CON">
+                <a href="https://wwwstage.click108.com.tw/unit007/item00741/index.php" target=_blank title="期間限定優惠"><img
+                    src="images/600x160.jpg"></a>
+              </div>
+            </div>
+          </div>
+          <!--區塊1 END-->
+          <!--區塊2-->
+          <div class="CON_IN item-content">
+            <div class="BOX">
+              <div class="BOX_TIT">白金服務有哪些內容</div>
+              <div class="CB_CON">
+                <img src="images/01.jpg" alt="白金服務幫你點運成金">
+                <div class="BLANK"></div>
+                <p align="center" class="txt1">人生困惑一網打盡<br>用對方法 你就能好命好運</p>
+                <div class="LM_BT">
+                  <a href="#" class="BT_COLOR">立即加入</a>
+                </div>
+                <!--白金功能1-->
+                <div class="BLANK2"></div>
+                <div class="VIP_CON">
+                  <div class="TITLE"><span>白金功能</span>我的命格與運勢</div>
+                  <img src="images/02.jpg" alt="我的命格與運勢">
+                  <!--命運表格-->
+                  <div class="PV_BOARD">
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1 T_BG_Y">
+                          <ul class="T_ONE2">
+                            <li>命</li>
+                          </ul>
+                        </li>
+                        <li class="X"></li>
+                        <li class="BAR1 T_BG_O">
+                          <ul class="T_ONE2">
+                            <li>運</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微命格詳批<span>($800)</span></li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>2020紫微流年運勢<span>($800)</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微財富命盤<span>($480)</span></li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微流月詳批<span>($2,800)</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微事業命盤<span>($380)</span></li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微365日運勢<span>($365)</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微愛情診斷書<span>($320)</span></li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微十年大運<span>($320)</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微定盤<span>($360)</span></li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="T_TWO1">
+                            <li>紫微歲運詳批<span>($480)</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--命運表格 END-->
+                  <img src="images/03.jpg" alt="未來規劃超前部署">
+                </div>
+                <!--白金功能2-->
+                <div class="VIP_CON">
+                  <div class="TITLE"><span>白金功能</span>我與他人的互動分析</div>
+                  <img src="images/04.jpg" alt="互動分析">
+                  <div class="BLANK"></div>
+                  <p align="center" class="txt1" style="color: #a669b8;">11種人際關係分析<br>只要輸入對方生辰 就能讀懂對方</p>
+                  <div class="BLANK"></div>
+                  <ul class="SHIP4">
+                    <li><img src="images/05_1.jpg" alt="關係分析"></li>
+                    <li><img src="images/05_2.jpg" alt="關係分析"></li>
+                    <li><img src="images/05_3.jpg" alt="關係分析"></li>
+                    <li class="MB_CLOSE"><img src="images/05_4.jpg" alt="關係分析"></li>
+                  </ul>
+                </div>
+                <div class="BLANK"></div>
+                <p align="center" class="txt1">近期發展&nbsp;+&nbsp;遠程規劃&nbsp;+&nbsp;人際指引<br>無往不利的生涯計畫書</p>
+                <div class="LM_BT">
+                  <a href="#a04" class="BT_COLOR">立即加入</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--區塊2 END-->
+          <!--區塊3-->
+          <div class="CON_IN item-content">
+            <div class="BOX">
+              <div class="BOX_TIT">白金服務特色</div>
+              <div class="CB_CON">
+                <img src="images/06.jpg" alt="個人化運勢">
+                <img src="images/07.jpg" alt="Line即時通知">
+                <p class="INFO">
+                  <span class="LEFT">最超值</span>
+                  <span class="txt1">白金服務採年約制<br>一年內可盡情享有白金優惠</span>
+                </p>
+                <div class="LM_BT">
+                  <a href="#a04" class="BT_COLOR">立即加入</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--區塊3 END-->
+          <!--區塊4-->
+          <div class="CON_IN">
+            <div class="BOX">
+              <div class="BOX_TIT">提供不同方案 貼近你的需求</div>
+              <div class="CB_CON">
+                <!--親子白金方案-->
+                <div class="VIP_PARENT">
+                  <div class="TITLE">父母首選：親子白金方案</div>
+                  <ul class="pq_INFOR2">
+                    <li>白金會員<br>一年期</li>
+                    <li>+</li>
+                    <li>親子專區<br>服務</li>
+                  </ul>
+                  <!--親子專區表格-->
+                  <div class="PA_BOARD">
+                    <div class="TWO_BOX" style="border: none;">
+                      <ul>
+                        <li class="BAR">親子專區內容</li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1">
+                          <ul class="P_TWO1">
+                            <li>家庭樹</li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="P_TWO1">
+                            <li>查看家人每日運勢變化</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1">
+                          <ul class="P_TWO1">
+                            <li>子女命格詳批</li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="P_TWO1">
+                            <li>命盤個性與引導，孩子前30年運勢</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1">
+                          <ul class="P_TWO1">
+                            <li>親子互動</li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="P_TWO1">
+                            <li>分析親子互動、比較子女特質</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--親子專區表格 END-->
+                  <div class="LM_BT">
+                    <a id="role1" href="#" class="BT_COLOR">立即加入</a>
+                  </div>
+                </div>
+                <div class="BLANK2"></div>
+                <!--業務白金方案-->
+                <div class="VIP_SALS MB_CLOSE">
+                  <div class="TITLE">業務/保險員首選：業務白金方案</div>
+                  <ul class="pq_INFOR2">
+                    <li class="SA">白金會員<br>一年期</li>
+                    <li>+</li>
+                    <li class="SA">業務專區<br>服務</li>
+                  </ul>
+                  <!--業務專區表格-->
+                  <div class="SA_BOARD">
+                    <div class="TWO_BOX" style="border: none;">
+                      <ul>
+                        <li class="BAR">業務專區內容</li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1">
+                          <ul class="P_TWO1">
+                            <li>你的業務特質</li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="P_TWO1">
+                            <li>提供你的職場特質、優缺點</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1">
+                          <ul class="P_TWO1">
+                            <li>職場人脈存摺</li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="P_TWO1">
+                            <li>上司/部屬/同事與你的互動分析、相處建議</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1">
+                          <ul class="P_TWO1">
+                            <li>客戶全面分析</li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="P_TWO1">
+                            <li>每位客戶個性 、客戶銷售、推薦秘訣</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="TWO_BOX">
+                      <ul>
+                        <li class="BAR1">
+                          <ul class="P_TWO1">
+                            <li>成功銷售指標</li>
+                          </ul>
+                        </li>
+                        <li class="BAR2">
+                          <ul class="P_TWO1">
+                            <li>客戶的購買特質、反對意見、購買訊息</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--業務專區表格 END-->
+                  <div class="LM_BT">
+                    <a id="role2" href="#" class="BT_COLOR">立即加入</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--區塊4 END-->
+          <!--區塊5-->
+          <div class="CON_IN item-content">
+            <div class="BOX">
+              <div class="BOX_TIT">白金服務推薦<br>原來名人也有這樣的煩惱</div>
+              <div class="CB_CON">
+                <p align="center" class="txt2">【小孩教育：怎樣教才不會變媽寶】</p>
+                <div class="VIDEO_BG">
+                  <div class="VIDEO">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/fLv2xj29yZY" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <p align="center" class="txt2">【職業選擇：原來當老師才最適合曹蘭】</p>
+                <div class="VIDEO_BG">
+                  <div class="VIDEO">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/DgWvAT6xV54" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <p align="center" class="txt2">【宿命輪迴：為何歹命？女人如油麻菜籽？】</p>
+                <div class="VIDEO_BG">
+                  <div class="VIDEO">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/ZA_h5XFjlGk" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <p align="center" class="txt2">【創業合夥：木星跟這群人超不對盤？】</p>
+                <div class="VIDEO_BG">
+                  <div class="VIDEO">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/jRKq0P3aiKY" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="LM_BT">
+                  <a href="#a04" class="BT_COLOR">立即加入</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--區塊5 END-->
+          <!--區塊6-->
+          <style>
+            .list-wrapper {
+              width: 100%;
+              height: 242px;
+              border: 1px solid #ccc;
+              overflow: hidden;
+            }
+
+            .list-wrapper .list-aggregate li {
+              padding: 15px;
+              border-bottom: 1px solid #ccc;
+              overflow: hidden;
+              /* height: 50px; */
+              height: auto;
+            }
+
+            .list-wrapper .list-aggregate li>img {
+              display: inline !important;
+              width: auto !important;
+            }
+
+            .list-wrapper .list-aggregate li>img:first-child {
+              padding-right: 5px;
+              margin-bottom: -3px;
+            }
+
+            .list-wrapper .list-aggregate span.prefix,
+            .list-wrapper .list-aggregate span.subhead {
+              padding-left: 10px;
+              color: #5f00b7;
+              font-size: 1.1em;
+            }
+
+            /* .list-wrapper .list-aggregate span.city {
+            text-align: right;
+            width: 50%;
+            color: #ccc;
+            font-size: 1em;
+            float: right;
+            } */
+            .list-wrapper .list-aggregate p.feedback {
+              clear: both;
+              margin-top: 10px;
+              color: #333;
+              font-size: 1.1em;
+            }
+          </style>
+          <div class="CON_IN">
+            <div class="BOX">
+              <div class="BOX_TIT">網友推薦</div>
+              <div class="CB_CON">
+                <!-- 后端看過來 -->
+                <div class="list-wrapper">
+                  <ul class="list-aggregate" id="marquee-vertical" class="FEEDBACK" style="width: 100%;">
+                    <li>
+                      <img src="./images/feedback_icon.gif" width="8" /><span class="prefix">小凌</span>　<span
+                        class="subhead">白金服務帶給我嶄新命理觀</span>
+                      <p class="feedback">
+                        過去親友推薦的命理老師經常語帶威脅，告訴我必須作法才能化解厄運，讓我感到很害怕，但科技紫微網的白金服務給我完全不一樣的現代命理觀念，我很慶幸自己可以加入白金會員！</p>
+                    </li>
+                    <li>
+                      <img src="./images/feedback_icon.gif" width="8" /><span class="prefix">佑君</span>　<span
+                        class="subhead">白金會員讓我更有自信！</span>
+                      <p class="feedback">
+                        一直以來算命師都說我的命不好，不僅將來沒前途還會拖累家人，真的讓我很沒自信，但自從接觸了科技紫微網的白金服務後，我才發現我竟然能掌握自己的命運，不是被算命師左右，真的很感動。</p>
+                    </li>
+                    <li>
+                      <img src="./images/feedback_icon.gif" width="8" /><span class="prefix">Coco</span>　<span
+                        class="subhead">白金會員真的太超值了！</span>
+                      <p class="feedback">
+                        過去的我常常一有事就花錢找坊間命理師解惑，但問題不僅沒得到解答，而且長久累積下來費用也很可觀！幸好去年發現了囊括了多項免費服務的白金會員，且一年期價格真的超優惠，對喜歡算命的我來說，真的是超棒的服務！
+                      </p>
+                    </li>
+                    <li>
+                      <img src="./images/feedback_icon.gif" width="8" /><span class="prefix">蟹</span>　<span
+                        class="subhead">自信心不足時可以找到適合的方向。</span>
+                      <p class="feedback">當對自己的自信心不足時，可以從中找出適用的選擇及方向。</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--區塊6 END-->
+            <!--區塊7-->
+            <div id="end"></div>
+            <div class="CON_IN item-content">
+              <div class="BOX">
+                <div class="BOX_TIT">付費方案</div>
+                <div class="CB_CON">
+                  <!-- 加入白金訊息 --->
+                  <div class="PMember_buy_frame">
+                    <div class="BAR_OP">
+                      <div class="TIT"><span class="M_ACT_t04">白金會員一年期：</span>&nbsp;<span
+                          class="M_ACT_t04 M_ACT_RED">NT$3,600</span>
+                        <a href="https://wwwstage.click108.com.tw/PMember/member108_all.php">服務說明</a>
+                      </div>
+                      <div class="BOXFORM">
+                        <a class="LINK_FRAME" href="#">
+                          <p class="M_ACT_t01"><b>平均每個月NT$300，限期再加碼：</b></p>
+                          <ul class="CON_P">
+                            <li><span class="M_ACT_t02 M_ACT_RED">限時送：諮詢師線上親算</span><span
+                                class="M_ACT_t06">(價值NT$2,000)</span></li>
+                            <li><span class="M_ACT_t02 M_ACT_BLUE">3張NT$100算命金</span>&nbsp;<span
+                                class="M_ACT_t06">(價值NT$300)</span></li>
+                          </ul>
+                        </a>
+                        <div class="BT04"><a href="https://wwwstage.click108.com.tw/nl_member_n.php?ItemID=M2004&END=1"
+                            class="BT_COLOR07">立即加入</a></div>
+                      </div>
+                    </div>
+                    <div class="BAR_OP">
+                      <div class="TIT TIT_3 xc-flex"><span class="LOGOM">父母首選</span><span
+                          class="M_ACT_t04">續約白金會員一年期+親子套餐服務：<span class="M_ACT_t05_s">NT$5,600</span><span
+                            class="M_ACT_t04 M_ACT_RED">NT$3,600</span></span>
+                        <a href="https://wwwstage.click108.com.tw/PMember/member108_all.php">服務說明</a>
+                      </div>
+                      <div class="BOXFORM">
+                        <a class="LINK_FRAME" href="#">
+                          <p class="M_ACT_t01"><b>限期再加碼：</b></p>
+                          <ul class="CON_P">
+                            <li><span class="M_ACT_t02 M_ACT_RED">限時送：諮詢師線上親算</span><span
+                                class="M_ACT_t06">(價值NT$2,000)</span></li>
+                            <li><span class="M_ACT_t02 M_ACT_BLUE">3張NT$100算命金</span>&nbsp;<span
+                                class="M_ACT_t06">(價值NT$300)</span></li>
+                          </ul>
+                        </a>
+                        <div class="BT04"><a href="https://wwwstage.click108.com.tw/PMember/buy.php?ItemID=RP005"
+                            class="BT_COLOR07">立即加入</a></div>
+                      </div>
+                    </div>
+                    <div class="BAR_OP MB_CLOSE">
+                      <div class="TIT TIT_2 xc-flex"><span class="LOGOM">業務首選</span><span
+                          class="M_ACT_t04">白金會員一年期+業務銷售成功術：<span class="M_ACT_t05_s">NT$5,600</span><span
+                            class="M_ACT_t04 M_ACT_RED">NT$3,600</span></span>
+                        <a href="https://wwwstage.click108.com.tw/PMember/member108_all.php">服務說明</a>
+                      </div>
+                      <div class="BOXFORM">
+                        <a class="LINK_FRAME" href="#">
+                          <p class="M_ACT_t01"><b>限期再加碼：</b></p>
+                          <ul class="CON_P">
+                            <li><span class="M_ACT_t02 M_ACT_RED">限時送：諮詢師線上親算</span><span
+                                class="M_ACT_t06">(價值NT$2,000)</span></li>
+                            <li><span class="M_ACT_t02 M_ACT_BLUE">3張NT$100算命金</span>&nbsp;<span
+                                class="M_ACT_t06">(價值NT$300)</span></li>
+                          </ul>
+                        </a>
+                        <div class="BT04"><a href="https://wwwstage.click108.com.tw/PMember/buy.php?ItemID=M3004"
+                            class="BT_COLOR07">立即加入</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--區塊7 END-->
+            <!--區塊8-->
+            <div class="CON_IN" id="common-qa">
+              <div class="BOX">
+                <div class="BOX_TIT">常見問題</div>
+                <div class="CB_CON">
+                  <script type="text/javascript">
+                    $(function () {
+                      let offsetTop = $('#common-qa').offset().top,
+                        // collector = {0:{bool: false, times: 0}, 1:{bool: false, times: 0}, 2:{bool: false, times: 0}, 3:{bool: false, times: 0}, 4:{bool: false, times: 0}};
+                        collector = {},
+                        outsideBox = $('.BOX .QA_BOX');
+
+                      outsideBox.each(function (i) {
+                        let $this = $(this);
+                        $this.find('a').on('click', function (e) {
+                          e.preventDefault();
+                          let _$this = $(this);
+                          _$this.parents('.BOX').find('.CONTENT').hide();
+                          // 動態新增data object
+                          while (!collector[i]) {
+                            collector[i] = {};
+                            collector[i]['bool'] = false;
+                            collector[i]['times'] = 0;
+                          }
+                          if (collector[i]['bool'] == false) {
+                            _$this.find('.X_CL').removeClass().addClass('X_OP');
+                            _$this.siblings('.CONTENT').show('slow');
+                            for (var every in collector) {
+                              if (every == i) continue;
+                              collector[every]['bool'] = false;
+                              if (collector[every]['times'] >= 1 && collector[every]['bool'] == false) {
+                                outsideBox.eq(every).find('.X_OP').removeClass().addClass('X_CL');
+                              }
+                            }
+                            collector[i]['bool'] = true;
+                            collector[i]['times'] += 1;
+                          } else {
+                            _$this.find('.X_OP').removeClass().addClass('X_CL')
+                            _$this.siblings('.CONTENT').hide('slow');
+                            collector[i]['bool'] = false;
+                            collector[i]['times'] -= 1;
+                          }
+                          console.log(collector);
+                          // 點擊時, 預防畫面上下滾動
+                          $(window).scrollTop(offsetTop - 100);
+                        })
+                      })
+                    })
+                  </script>
+                  <div class="QA_BOX">
+                    <a href="#">
+                      <div class="TITLE">
+                        什麼是白金會員？
+                        <div class="X_CL"></div>
+                      </div>
+                    </a>
+                    <div class="CONTENT" style="display: none;">
+                      <p>首先，運用紫微斗數量身打造你的個人化運勢，讓你輕鬆趨吉避凶。其次，超過40種命理服務完整分析你的潛力特質、最適合的人事時地物，使你能充分發揮天賦，享受人生。</p>
+                      <p>最重要的是親友區功能：紫微合參提供你跟不同的人，處於不同關係時，最佳的互動方法。用對的方式溝通，在人際處理上就可以勝券在握。</p>
+                    </div>
+                  </div>
+                  <div class="QA_BOX">
+                    <a href="#">
+                      <div class="TITLE">
+                        白金可以算我親朋好友嗎？
+                        <div class="X_CL"></div>
+                      </div>
+                    </a>
+                    <div class="CONTENT" style="display: none;">
+                      <p>除了人際關係親友區以外，目前白金服務只針對你個人做分析。</p>
+                    </div>
+                  </div>
+                  <div class="QA_BOX">
+                    <a href="#">
+                      <div class="TITLE">
+                        白金是年約制服務？
+                        <div class="X_CL"></div>
+                      </div>
+                    </a>
+                    <div class="CONTENT" style="display: none;">
+                      <p>是的，購買白金開始起一年內，皆可在白金頁面內反覆觀看自己的命理內容、運用親友區內的紫微合參、更享購買命理單元及親算的優惠好康！</p>
+                    </div>
+                  </div>
+                  <div class="QA_BOX">
+                    <a href="#">
+                      <div class="TITLE">
+                        白金會員可以免費算所有命理單元？
+                        <div class="X_CL"></div>
+                      </div>
+                    </a>
+                    <div class="CONTENT" style="display: none;">
+                      <p>很抱歉是不行的，詳細的白金服務請看<a href="#">服務介紹</a></p>
+                    </div>
+                  </div>
+                  <div class="QA_BOX">
+                    <a href="#">
+                      <div class="TITLE">
+                        白金會員可以免費找老師親算？
+                        <div class="X_CL"></div>
+                      </div>
+                    </a>
+                    <div class="CONTENT" style="display: none;">
+                      <p>很抱歉是不行的，但購買親算可享有9折優惠。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--區塊8 END-->
+            <!--區塊9-->
+            <div class="CON_IN item-content">
+              <div class="BOX">
+                <div class="BOX_TIT">聯繫專人說明</div>
+                <div class="CB_CON">
+                  <p class="txt3" align="center">不清楚白金會員服務的內容及使用方式嗎? 請填寫您的聯繫資料，讓我們為您服務!</p>
+                  <div class="BAR_OP">
+                    <div class="BT03">
+                      <a href="#" class="BT_COLOR02" href="tel:0226980111,8" style="position: relative;">
+                        <div class="row no-gutters" style="margin:0 auto;">
+                          <div class="col-3">
+                            <div class="BT_ICON"
+                              style="background-image:url(https://imgs.click108.com.tw/mobile/T1/PMember/images_new/phone_icon.png)">
+                            </div>
+                          </div>
+                          <div style="margin-left: 3rem;" class="col-9">
+                            <p style="height: 35px; line-height: 35px;">立即聯繫專人說明</p>
+                            <p style="height: 25px; line-height: 25px; color: #ffda68;">服務時間：周一至周五9:00至18:00</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <script type="text/javascript">
+                    $(function () {
+                      $('#name, #tel, #e-mail, #remarks').click(function () {
+                        $(this).removeClass('error');
+                      });
+                      $('#checkGo').click(function (e) {
+                        e.preventDefault();
+                        let regTel = /^09[0-9]{8}$/, regEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/, times = 0;
+                        if (!!$('#remarks').val()) { $('#remarks').removeClass('error'); } else { $('#remarks').addClass('error'); times++; }
+                        if (!!$('#name').val()) { $('#name').removeClass('error'); } else { $('#name').addClass('error'); times++ }
+                        if (regEmail.test($('#e-mail').val())) { $('#e-mail').removeClass('error') } else { $('#e-mail').addClass('error'); times++ }
+                        if (!$('#available-time option:selected').val()) times++
+                        if (regTel.test($('#tel').val()) && $('#tel').val().length == 10) { $('#tel').removeClass('error') } else { $('#tel').addClass('error'); times++ }
+                        // 上述資料都驗證，方能送出
+                        if (times == 5) { new wqPopup().alert('將有專人與您聯絡'); } else { return; }
+                      });
+                    })
+                  </script>
+                  <style>
+                    /* div5 */
+                    .d-flex {
+                      display: -webkit-box !important;
+                      display: -ms-flexbox !important;
+                      display: flex !important;
+                    }
+
+                    .flex-row {
+                      -webkit-box-orient: horizontal !important;
+                      -webkit-box-direction: normal !important;
+                      -ms-flex-direction: row !important;
+                      flex-direction: row !important;
+                    }
+
+                    .col-3 {
+                      -webkit-box-flex: 0;
+                      -ms-flex: 0 0 25%;
+                      flex: 0 0 25%;
+                      max-width: 25%;
+                    }
+
+                    .col-9 {
+                      -webkit-box-flex: 0;
+                      -ms-flex: 0 0 75%;
+                      flex: 0 0 75%;
+                      /* max-width: 75%; */
+                    }
+
+                    .PC #div5 .col-9>p:last-child {
+                      font-size: 0.8rem;
+                    }
+
+                    .PC #div5 .col-9>p:first-child {
+                      font-size: 1.5rem;
+                    }
+
+                    #div5 .row {
+                      position: absolute;
+                      -webkit-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%);
+                      left: 50%;
+                      top: 50%;
+                    }
+
+                    .MOBILE #div5 .row {
+                      width: 235px;
+                    }
+
+                    .MOBILE #div5 .row .col-9>p:first-child {
+                      font-size: 23px;
+                    }
+
+                    .MOBILE #div5 .row .col-9>p:last-child {
+                      font-size: 12px;
+                    }
+
+                    /* div5 */
+                    /* input element for wenqu */
+                    input::-ms-clear,
+                    input::-ms-reveal {
+                      display: none;
+                      width: 0;
+                      height: 0;
+                    }
+
+                    /* Chrome, Safari, Edge, Opera */
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                      -webkit-appearance: none;
+                      margin: 0;
+                    }
+
+                    /* Firefox */
+                    input[type=number] {
+                      -moz-appearance: textfield;
+                    }
+
+                    input[type="number"].wq-input,
+                    input[type="email"].wq-input {
+                      /* one for click, the input box will show 請輸入姓名或暱稱 */
+                      /* content:"請輸入姓名或暱稱"; */
+                      width: 100%;
+                      height: 40px;
+                      font-size: 1em;
+                      line-height: 40px;
+                      padding-left: 6px;
+                      border: 1px solid #999;
+                      background-color: #fff;
+                      color: #333;
+                      -webkit-border-radius: 5px;
+                      -moz-border-radius: 5px;
+                      border-radius: 5px;
+                      font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+                      /* line-height: 32px; IE-specific rules go here  */
+                      /* height: 32px; IE-specific rules go here */
+                    }
+
+                    input[type="number"].wq-input:placeholder-shown,
+                    input[type="email"].wq-input:placeholder-shown {
+                      background: transparent;
+                    }
+
+                    input[type="number"].wq-input::-webkit-input-placeholder,
+                    input[type="email"].wq-input::-webkit-input-placeholder {
+                      background: transparent;
+                    }
+
+                    input[type="number"].wq-input:-moz-placeholder,
+                    input[type="email"].wq-input:-moz-placeholder {
+                      /* Firefox 18- */
+                      background: transparent;
+                    }
+
+                    input[type="number"].wq-input::-moz-placeholder,
+                    input[type="email"].wq-input::-moz-placeholder {
+                      /* Firefox 19+ */
+                      background: transparent;
+                    }
+
+                    input[type="number"].wq-input:-ms-input-placeholder,
+                    input[type="email"].wq-input:-ms-input-placeholder {
+                      background: transparent;
+                    }
+
+                    input[type="number"].wq-input.error,
+                    input[type="email"].wq-input.error {
+                      color: #c00;
+                      background-color: #fc6;
+                      border: 1px solid #f90;
+                    }
+
+                    input[type="number"].wq-input.error:placeholder-shown,
+                    input[type="email"].wq-input.error:placeholder-shown {
+                      font-size: 1em;
+                      color: #c00;
+                    }
+
+                    input[type="number"].wq-input.error::-webkit-input-placeholder,
+                    input[type="email"].wq-input.error::-webkit-input-placeholder {
+                      font-size: 1em;
+                      color: #c00;
+                    }
+
+                    input[type="number"].wq-input.error:-moz-placeholder,
+                    input[type="email"].wq-input.error:-moz-placeholder {
+                      /* Firefox 18- */
+                      font-size: 1em;
+                      color: #c00;
+                    }
+
+                    input[type="number"].wq-input.error::-moz-placeholder,
+                    input[type="email"].wq-input.error::-moz-placeholder {
+                      /* Firefox 19+ */
+                      font-size: 1em;
+                      color: #c00;
+                    }
+
+                    input[type="number"].wq-input.error:-ms-input-placeholder,
+                    input[type="email"].wq-input.error:-ms-input-placeholder {
+                      font-size: 1em;
+                      color: #c00;
+                    }
+                  </style>
+                  <div class="BAR_OP">
+                    <div class="BT03" style="margin-bottom:10px;">
+                      <a href="#" class="BT_COLOR02">
+                        <div style="width:270px; margin:0 auto;">
+                          <div class="BT_ICON" style="background-image:url(images/pen_icon.png)"></div>
+                          <p>填寫資料，預約專人說明</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="OPENBOX">
+                      <p class="M_ACT_t01" style="margin-bottom:5px;"><b>諮詢項目：續約白金會員</b></p>
+                      <!--FORM標單-->
+                      <ul class="FORM">
+                        <li style="width:80%; padding-right:1%;">
+                          <div class="INPUT">
+                            <input type="text" class="wq-input" id="name" placeholder="您的姓名。" /><span
+                              class="icon_clear">x</span>
+                          </div>
+                        </li>
+                        <li style="width:20%;">
+                          <select class="wq-select">
+                            <option>小姐</option>
+                            <option>先生</option>
+                          </select>
+                        </li>
+                        <li style="width:100%;">
+                          <div class="INPUT">
+                            <input type="text" class="wq-input" id="e-mail" placeholder="您的E- Mail。" /><span
+                              class="icon_clear">x</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="INPUT">
+                            <input type="number" class="wq-input" id="tel" placeholder="您的聯繫電話/手機號碼。" /><span
+                              class="icon_clear">x</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="styled-select">
+                            <select id="available-time" class="wq-select">
+                              <option value="-1">請選擇您可聯繫的時間。</option>
+                              <option value="1">上午10:00~12:00</option>
+                              <option value="2">下午13:00~17:00</option>
+                              <option value="3">白天上班時間均可</option>
+                            </select>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="INPUT">
+                            <textarea style="resize: none;" class="wq-input textfieldC02" placeholder="備註。"
+                              id="remarks"></textarea>
+                          </div>
+                        </li>
+                      </ul>
+                      <!--FORM標單尾-->
+                      <div class="BT05"><a id="checkGo" href="javascript:;" class="BT_COLOR05">填完送出</a></div>
+                    </div>
+                  </div>
+                  <p class="txt4" align="center">白金服務諮詢專線：(02)26980111#512<br>服務時間：週一至週五9:00至18:00</p>
+                </div>
+              </div>
+            </div>
+            <!--區塊9 END-->
+          </div>
+          <div class="BT_F" id="target" style="display: none;">
+            <ul>
+              <li><a href="#" class="LEFT BT_COLOR05">聯繫或預約<br>專人說明</a></li>
+              <li><a href="#" class="RIGHT BT_COLOR06">立即加入</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--WRAPPER最外圈 END-->
+        <!--PC版 FOOT-->
+        <div class="FOOT_PC">
+          <style type="text/css">
+            @media screen and (max-width: 1022px) {
+              #news_footer {
+                display: none;
+              }
+
+              #footer_container {
+                padding-bottom: 45px;
+              }
+
+              #footer_sep {
+                clear: both;
+                height: 1px;
+                width: 1px;
+              }
+
+              #footer_sep img {
+                display: none;
+              }
+
+              #footer_left {
+                float: none !important;
+                margin: 0 auto;
+              }
+
+              #footer_right {
+                float: none !important;
+                margin: 0 auto;
+                max-width: 759px !important;
+                width: auto !important;
+                margin-top: 20px;
+              }
+
+              #footer_right .group {
+                float: left;
+                margin-right: 20px;
+              }
+
+              #footer_right .group:last-child {
+                margin-right: 0;
+              }
+            }
+          </style>
+          <script type="text/javascript">
+            $(function () {
+              $("#gomobile_foot").click(function (e) {
+                $.ajax({
+                  type: "POST",
+                  async: false,
+                  url: "/include/gdpr/GDPR_ajax.php",
+                  data: { gtype: 6, from: "PC" },
+                  dataType: "json",
+                  success: function (data) {
+                  }
+                });
+              });
+            });
+
+          </script>
+          <div
+            style="width: 100%; height: 28px; text-align: center; background: url('https://imgs.click108.com.tw/title//images/suburb_psychic_downmenu_bg.png');"
+            id="news_footer" class="noprint">
+            <div style="width: 1023px; margin: 0 auto;" class="noprint">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c01&RedirectTo=%2Fmenu%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c01/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5">命理單元</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c02&RedirectTo=%2Fmaestro%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c02/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5">大師親算</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c03&RedirectTo=%2Fmaestro%2Fname_index.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c03/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5">大師命名</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c04&RedirectTo=%2Funit000%2Fbuypoint%2F003.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c04/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5">購買點數</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c05&RedirectTo=%2Fmember108.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c05/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5" target="_blank">白金會員</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c06&RedirectTo=%2Fmenu%2Fcategory.php%3Fcategory%3D2&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c06/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5">
+                      <font color="#fcff00">2023流年</font>
+                    </a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c07&RedirectTo=%2Funit007%2Fitem00174%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c07/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5" target="_blank">點燈祈福</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c08&RedirectTo=%2Funit007%2Fitem00404%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c08/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5">擲筊請神</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle" class="suburbmenu_txt01"><a
+                      href="/Promote/PromoteX.php?Vender=FOR_foot_c09&RedirectTo=http%3A%2F%2Fecal.click108.com.tw&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c09/id_astro/id_astro/"
+                      class="suburbmenu_link_Re5">農民曆</a></td>
+                  <td width="3" align="center" valign="middle"><img
+                      src="https://imgs.click108.com.tw/title//images/suburb_article_menu_line.png" width="3"
+                      height="14" /></td>
+                  <td align="center" valign="middle">
+                    <table width="80%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="36%"><img src="https://imgs.click108.com.tw/title//images/icon_free.gif" width="38"
+                            height="17" /></td>
+                        <td align="left" valign="middle"><a
+                            href="/Promote/PromoteX.php?Vender=FOR_foot_c10&RedirectTo=%2Ffree.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/foot/c10/id_astro/id_astro/"
+                            class="suburbmenu_link_Re5">免費算命</a></td>
+                      </tr>
+                    </table>
+                    <a href="#" class="suburbmenu_link_Re2"></a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div style="width: 100%; min-height: 250px; background: #deddde;" class="noprint" id="footer_container">
+            <div style="max-width: 1204px; margin: 0 auto;" class="noprint">
+              <div style="width: 100%; height: 45px; margin: 0 auto;"></div>
+              <div style="max-width: 1023px; margin: 0 auto;">
+                <div style="width: 759px; float: left;" id="footer_left">
+                  <div style="width: 10px; float: left;">&nbsp;</div>
+                  <div style="width: 430px; float: left;">
+                    <div class="index_txt06">關於科技紫微</div>
+                    <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="139" align="left" valign="top">
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc01&RedirectTo=%2Ffortune%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c01/id_click108/click108_10108/"
+                            class="index_link05">算　命</a> <br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc02&RedirectTo=http%3A%2F%2Fastro.click108.com.tw%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c02/id_click108/click108_10108/"
+                            class="index_link05">星　座</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc03&RedirectTo=https%3A%2F%2Fnews.click108.com.tw%2F&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c03/id_click108/click108_10108/"
+                            class="index_link05">文　章</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc04&RedirectTo=https%3A%2F%2Fecal.click108.com.tw%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c04/id_click108/click108_10108/"
+                            class="index_link05">農民曆</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc05&RedirectTo=%2Fcourse%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c05/id_click108/click108_10108/"
+                            class="index_link05">課　程</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc06&RedirectTo=&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c06/id_click108/click108_10108/"
+                            class="index_link05"></a>
+                        </td>
+                        <td width="139" align="left" valign="top">
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc07&RedirectTo=%2Funit001%2Fyear-half%2Finput.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c07/id_click108/click108_10108/"
+                            class="index_link05">
+                            <font color=#ff000>5折批流年</font>
+                          </a> <br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc08&RedirectTo=%2Funit007%2Fapp_download%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c08/id_click108/click108_10108/"
+                            class="index_link05">
+                            <font color=#ff000>全新APP(iOS+安卓)</font>
+                          </a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc09&RedirectTo=https%3A%2F%2Fline.me%2FR%2Fti%2Fp%2F%40click108&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c09/id_click108/click108_10108/"
+                            class="index_link05">LINE官方帳號</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc10&RedirectTo=http%3A%2F%2Fwww.facebook.com%2Fclick108&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c10/id_click108/click108_10108/"
+                            class="index_link05" target="_blank">FB官方粉絲團</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc11&RedirectTo=https%3A%2F%2Fwww.instagram.com%2Fclick108_%2F&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c11/id_click108/click108_10108/"
+                            class="index_link05" id="gomobile_foot">
+                            <font color=#ff000>IG官方帳號</font>
+                          </a><br />
+                        </td>
+                        <td width="139" align="left" valign="top">
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc12&RedirectTo=%2Fcorp%2F%3Fpage%3D7&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c12/id_click108/click108_10108/"
+                            class="index_link05" target="_blank">合作提案</a> <br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc13&RedirectTo=%2Fterms%2Fagree_notice.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c13/id_click108/click108_10108/"
+                            class="index_link05" target="_blank">防詐騙宣導</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_ABOc14&RedirectTo=%2Fcorp%2F%3Fpage%3D1%23page2&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c14/id_click108/click108_10108/"
+                            class="index_link05" target="_blank">關於我們</a><br />
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div style="width: 319px; float: left;">
+                    <div class="index_txt06">會員服務</div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td align="left" valign="top">
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_MEMc01&RedirectTo=%2Funit000%2Fhelp%2Findex.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c01/id_click108/click108_10108/"
+                            class="index_link05" target="_blank">客服中心</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_MEMc02&RedirectTo=%2Fterms%2Fagree_service.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c02/id_click108/click108_10108/"
+                            class="index_link05" target="_blank">服務條款</a><br />
+                          <a href="/Promote/PromoteX.php?Vender=index_footer_MEMc03&RedirectTo=%2Fterms%2Fagree_info.php&ADFormPath=wwwstage/VIP_fe__member108_pro~php/footer/c03/id_click108/click108_10108/"
+                            class="index_link05" target="_blank">隱私權政策與個資聲明</a><br />
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div style="clear: both;"></div>
+                </div>
+                <div style="width: 4px; float: left; padding-top: 4px;" id="footer_sep"><img
+                    src="https://imgs.click108.com.tw/title//images/foot_line.jpg" width="4" height="157" /></div>
+                <div style="float: left; padding-left: 15px;" id="footer_right">
+                  <div style="margin-bottom: 10px;" class="group"><a href="https://wwwstage.click108.com.tw/"><img
+                        src="https://imgs.click108.com.tw/title//images/foot_logo.jpg" width="132" height="49"
+                        border="0" /></a></div>
+                  <div class="group">
+                    <div class="index_txt07">Copyright &copy; 2023科技紫微網 版權所有</div>
+                    <div class="index_txt07">服務時間：週一至週五 09:00 – 18:00</div>
+                  </div>
+                  <div class="group">
+                    <div class="index_txt07">新北市汐止區新台五路一段75號4樓之3</div>
+                    <!-- <div class="index_txt07">(02)2698-0111分機8</div> -->
+                  </div>
+                </div>
+                <div style="clear: both;"></div>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+            $('.FOOT_PC .index_link05').each(function () {
+              if ($(this).text() == '手機版') {
+                $(this).attr('href', $(this).attr('href').replace('m.click108.com.tw', 'ms.click108.com.tw'));
+                $(this).click(function () {
+                  document.cookie = 'PCSET=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.click108.com.tw';
+                });
+              }
+            });
+          </script>
+          <!--kol -->
+          <!--kol -->
+          <!-- Google tag (gtag.js) Google Analytics(GA4) for 60 -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYFX9L8Y3H"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-YYFX9L8Y3H');
+
+          </script>
+          <!-- End GA Code -->
+          <!-- Global site tag (gtag.js) - Google Ads Remarketing -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1009039538"> </script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', ' AW-1009039538');
+          </script>
+          <!-- End Google Ads Remarketing Code -->
+          <!-- Click108 set click (click108_set_click.js) -->
+          <script src="https://wwwstage.click108.com.tw/js/click108_set_click.js"></script>
+          <!-- End Click108 set click Code --><!-- appier-aiqua Code -->
+          <script src="https://cdn.qgraph.io/dist/aiqua-wp.js"></script>
+          <script>
+            /*  test60-appid 
+            AIQUA.init({
+            appId: 'a49e8de64477aa7dd180',
+                timeout: 5000
+              });
+            */
+            AIQUA.init({
+              appId: '4ad8c69836055c7858d0',
+              timeout: 5000
+            });
+          </script>
+          <script type="text/javascript">
+            !function (q, g, r, a, p, h, js) {
+              if (q.qg) return;
+              js = q.qg = function () {
+                js.callmethod ? js.callmethod.call(js, arguments) : js.queue.push(arguments);
+              };
+              js.queue = [];
+              p = g.createElement(r); p.async = !0; p.src = a; h = g.getElementsByTagName(r)[0];
+              h.parentNode.insertBefore(p, h);
+            }(window, document, 'script', '//cdn.qgr.ph/qgraph.4ad8c69836055c7858d0.js');
+          </script>
+          <!-- End appier-aiqua Code -->
+          <!-- YAHOO YAD PV code -->
+          <script
+            type="application/javascript">(function (w, d, t, r, u) { w[u] = w[u] || []; w[u].push({ 'projectId': '10000', 'properties': { 'pixelId': '10091765' } }); var s = d.createElement(t); s.src = r; s.async = true; s.onload = s.onreadystatechange = function () { var y, rs = this.readyState, c = w[u]; if (rs && rs != "complete" && rs != "loaded") { return } try { y = YAHOO.ywa.I13N.fireBeacon; w[u] = []; w[u].push = function (p) { y([p]) }; y(c) } catch (e) { } }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr) })(window, document, "script", "https://s.yimg.com/wi/ytc.js", "dotq");</script>
+          <!-- End YAHOO YAD PV code -->
+          <!-- Facebook Search lift Code -->
+          <script>
+            function fbqSearchKeyword() {
+              var locationSearch = window.location.search;
+              var utmSource = locationSearch.match(/[?&]utm_source=([^&#]*)/);
+              var utmMedium = locationSearch.match(/[?&]utm_medium=([^&#]*)/);
+              var utmCampaign = locationSearch.match(/[?&]utm_campaign=([^&#]*)/);
+              var trackingFields = {
+                utm_source: utmSource && utmSource[1],
+                utm_medium: utmMedium && utmMedium[1],
+                utm_campaign: utmCampaign && utmCampaign[1],
+              };
+
+              if (!utmSource || !utmSource[1]) {
+                trackingFields.utm_source = 'organic';
+              }
+
+              var referrer = document.referrer;
+              if (referrer) {
+                var link = document.createElement('a');
+                link.setAttribute('href', referrer);
+                var pattern = new RegExp('[\\?&](?:q|query)=([^&#]*)');
+                var query = link.search.match(pattern);
+                if (query && query.length > 0) {
+                  var keyword = query[1].replace(/\+/gi, "%20");
+                }
+                if (keyword) {
+                  trackingFields.hostname = link.hostname;
+                  trackingFields.keyword = decodeURIComponent(keyword);
+                } else {
+                  trackingFields.hostname = link.hostname;
+                  trackingFields.keyword = null;
+                }
+              } else {
+                trackingFields.hostname = null;
+                trackingFields.keyword = null;
+              }
+
+              if (document.referrer.indexOf(location.protocol + "//" + location.host) !== 0)
+                fbq('trackCustom', 'referrerSource', trackingFields);
+
+            }
+            fbqSearchKeyword();
+          </script>
+          <!-- End Facebook Search lift Code -->
+          <!-- LINE DPA PV Code -->
+          <!-- Do Not Modify -->
+          <script>
+            (function (g, d, o) {
+              g._ltq = g._ltq || []; g._lt = g._lt || function () { g._ltq.push(arguments) };
+              var h = location.protocol === 'https:' ? 'https://d.line-scdn.net' : 'http://d.line-cdn.net';
+              var s = d.createElement('script'); s.async = 1;
+              s.src = o || h + '/n/line_tag/public/release/v1/lt.js';
+              var t = d.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+            })(window, document);
+            _lt('init', {
+              customerType: 'lap',
+              tagId: 'cdebd242-e918-4545-b373-9f89454154b6'
+            });
+            _lt('send', 'pv', ['cdebd242-e918-4545-b373-9f89454154b6']);
+          </script>
+          <noscript>
+            <img height="1" width="1" style="display:none"
+              src="https://tr.line.me/tag.gif?c_t=lap&t_id=cdebd242-e918-4545-b373-9f89454154b6&e=pv&noscript=1" />
+          </noscript>
+          <!-- End LINE DPA PV Code --><!-- Facebook PageView Code -->
+          <script>
+            !function (f, b, e, v, n, t, s) {
+              if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                  n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+              };
+              if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+              n.queue = []; t = b.createElement(e); t.async = !0;
+              t.src = v; s = b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '603328009786761');
+            fbq('track', 'PageView', {}, { eventID: '5B18F728-3DEC-375E-9AD3-21F013CA36F4' });
+          </script>
+          <noscript>
+            <img height="1" width="1" style="display:none"
+              src="https://www.facebook.com/trid=603328009786761&ev=PageView&noscript=1" />
+          </noscript>
+          <!-- End Facebook PageView Code -->
+          <!-- Google Tag Manager(click108) -->
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHDC" height="0" width="0"
+              style="display:none;visibility:hidden"></iframe></noscript>
+          <script>(function (w, d, s, l, i) {
+              w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                  new Date().getTime(), event: 'gtm.js'
+              }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                  'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-MHDC');
+          </script>
+          <!-- End Google Tag Manager(click108) -->
+          <!-- LINE Tag Base PV Code -->
+          <!-- Do Not Modify -->
+          <script>
+            (function (g, d, o) {
+              g._ltq = g._ltq || []; g._lt = g._lt || function () { g._ltq.push(arguments) };
+              var h = location.protocol === 'https:' ? 'https://d.line-scdn.net' : 'http://d.line-cdn.net';
+              var s = d.createElement('script'); s.async = 1;
+              s.src = o || h + '/n/line_tag/public/release/v1/lt.js';
+              var t = d.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+            })(window, document);
+            _lt('init', {
+              customerType: 'lap',
+              tagId: 'ea77f9f8-e05e-4d64-a6a1-948e12291f7c'
+            });
+            _lt('send', 'pv', ['ea77f9f8-e05e-4d64-a6a1-948e12291f7c']);
+          </script>
+          <noscript>
+            <img height="1" width="1" style="display:none"
+              src="https://tr.line.me/tag.gif?c_t=lap&t_id=ea77f9f8-e05e-4d64-a6a1-948e12291f7c&e=pv&noscript=1" />
+          </noscript>
+          <!-- End LINE Tag Base PV Code -->
+          <script>console.log('getTrackItemID = ,ItemID=')</script>
+        </div>
+        <!--PC版 FOOT結束-->
+        <!--手機版 FOOT-->
+        <div class="FOOT_MOBILE">
+          <div style="margin-top: -20px;"></div>
+          <script type="text/javascript">
+            setTimeout(function () {
+              var a = document.createElement("script");
+              var b = document.getElementsByTagName("script")[0];
+              a.src = document.location.protocol + "//dnn506yrbagrg.cloudfront.net/pages/scripts/0023/6891.js?" + Math.floor(new Date().getTime() / 3600000);
+              a.async = true; a.type = "text/javascript"; b.parentNode.insertBefore(a, b)
+            }, 1);
+          </script>
+          <script>
+            function cookie_PC(cookieName, cookieValue) {
+              var today = new Date();
+              var expire = new Date();
+              var domain_c = "click108.com.tw";
+              expire.setTime(today.getTime() + 3600000 * 1);
+              //expire.setTime(today.getTime() + 1000 * nCount);
+              document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + ";domain=" + domain_c + ';path=/';
+            }
+            function go_PC(goto) {
+              cookie_PC('PCSET', '1');
+              window.location.href = (goto);
+            }
+          </script>
+          <!--footer_頭-->
+          <div id="footer" class="FOOT">
+            <div class="GUIDE">
+              <ul>
+                <li><a
+                    href="https://wwwstage.click108.com.tw/mobile/login.php?DestURL=aHR0cDovL3d3d3N0YWdlLmNsaWNrMTA4LmNvbS50dy9WSVBfZmUvbWVtYmVyMTA4X3Byby5waHA/RU5EPTE=">登入註冊</a>
+                </li>
+                <!-- <li><a href="javascript:go_PC('https://wwwstage.click108.com.tw');">電腦版</a></li> -->
+                <li><a href="https://ms.click108.com.tw/help/index.php?Vender=m_footer">客服中心</a></li>
+              </ul>
+            </div>
+            <style>
+              #footer .GUIDE li {
+                width: 50%;
+              }
+            </style>
+            <h6><a href="https://wwwstage.click108.com.tw/mobile/terms/agree_service.php" target="_blank">服務條款</a>‧<a
+                href="https://wwwstage.click108.com.tw/mobile/terms/agree_info.php"
+                target="_blank">隱私權政策</a><br />Copyright©2023科技紫微網&nbsp;版權所有</h6>
+            <div class="CHARE">
+              <ul>
+                <li><a href="https://line.me/R/ti/p/%40click108" target="_blank" class="LINE">LINE分享</a></li>
+                <li><a href="https://www.facebook.com/click108" target="_blank" class="FB">FB分享</a></li>
+              </ul>
+            </div>
+          </div>
+          <!--footer_尾-->
+        </div>
+      </div>
+      <script>
+        $(function () {
+          var sib = $('#footer').prevAll('div, p, section, article, form').first();
+          if (sib.length == 0 || sib.css('display') == 'none') {
+            $('#footer').css('margin-top', '20px');
+          } else {
+            sib.append('<div class="footer-clearfix"></div>');
+          }
+        });
+      </script>
+      <script src="https://wwwstage.click108.com.tw/api/APP/js/mukiApp_edit_targer.js"></script>
+    </div>
+    <!--手機版 FOOT尾-->
+</body>
+
+</html>
